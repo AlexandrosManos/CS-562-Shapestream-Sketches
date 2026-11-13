@@ -1,0 +1,4 @@
+# Project A kit. The course image (04_Environment) already has pyspark 4.2, kafka-python and pandas.
+rdflib>=7.0          # scripts/rdfxml_to_nt.py (LUBM) and checking SHACL output
+pyshacl>=0.26        # optional: validate data against your shapes
+datasketches>=5.0    # optional (Team A1): Apache DataSketches HLL / Count-Min in Python

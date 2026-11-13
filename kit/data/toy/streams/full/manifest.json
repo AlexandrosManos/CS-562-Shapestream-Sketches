@@ -1,0 +1,30 @@
+{
+ "name": "full",
+ "mask_types": 0.0,
+ "epochs": [
+  {
+   "epoch": 0,
+   "events": 6972,
+   "deletions": 0,
+   "insertions": 6972,
+   "first_seq": 0,
+   "last_seq": 6971
+  },
+  {
+   "epoch": 1,
+   "events": 589,
+   "deletions": 199,
+   "insertions": 390,
+   "first_seq": 6972,
+   "last_seq": 7560
+  },
+  {
+   "epoch": 2,
+   "events": 597,
+   "deletions": 202,
+   "insertions": 395,
+   "first_seq": 7561,
+   "last_seq": 8157
+  }
+ ]
+}

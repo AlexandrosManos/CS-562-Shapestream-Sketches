@@ -1,0 +1,547 @@
+{"seq":6382,"epoch":1,"op":"-","s":"http://example.org/resource/Person_42","p":"http://example.org/ontology/name","o":"Person 42","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6383,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_29","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_50","okind":"iri"}
+{"seq":6384,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_29","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6385,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_29","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6386,"epoch":1,"op":"+","s":"http://example.org/resource/Person_113","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_65","okind":"iri"}
+{"seq":6387,"epoch":1,"op":"-","s":"http://example.org/resource/Person_803","p":"http://example.org/ontology/name","o":"Person 803","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6388,"epoch":1,"op":"-","s":"http://example.org/resource/Person_784","p":"http://example.org/ontology/name","o":"Person 784","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6389,"epoch":1,"op":"-","s":"http://example.org/resource/Person_178","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_90","okind":"iri"}
+{"seq":6390,"epoch":1,"op":"-","s":"http://example.org/resource/Person_178","p":"http://example.org/ontology/name","o":"Person 178","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6391,"epoch":1,"op":"-","s":"http://example.org/resource/Person_607","p":"http://example.org/ontology/birthDate","o":"1994-03-14","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#date"}
+{"seq":6392,"epoch":1,"op":"-","s":"http://example.org/resource/Person_839","p":"http://example.org/ontology/name","o":"Person 839","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6393,"epoch":1,"op":"-","s":"http://example.org/resource/Person_16","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_23","okind":"iri"}
+{"seq":6394,"epoch":1,"op":"-","s":"http://example.org/resource/Org_88","p":"http://example.org/ontology/name","o":"Org 88","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#string"}
+{"seq":6395,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_49","p":"http://example.org/ontology/almaMater","o":"http://example.org/resource/Org_90","okind":"iri"}
+{"seq":6396,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_49","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_139","okind":"iri"}
+{"seq":6397,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_49","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6398,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_6","p":"http://example.org/ontology/director","o":"http://example.org/resource/Person_191","okind":"iri"}
+{"seq":6399,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_6","p":"http://example.org/ontology/title","o":"New film","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6400,"epoch":1,"op":"-","s":"http://example.org/resource/Person_72","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_66","okind":"iri"}
+{"seq":6401,"epoch":1,"op":"-","s":"http://example.org/resource/Person_72","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_20","okind":"iri"}
+{"seq":6402,"epoch":1,"op":"+","s":"http://example.org/resource/Person_72","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_29","okind":"iri"}
+{"seq":6403,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_8","p":"http://example.org/ontology/director","o":"http://example.org/resource/Person_544","okind":"iri"}
+{"seq":6404,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_8","p":"http://example.org/ontology/title","o":"New film","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6405,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_8","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Film","okind":"iri"}
+{"seq":6406,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_8","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Work","okind":"iri"}
+{"seq":6407,"epoch":1,"op":"+","s":"http://example.org/resource/Person_617","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_55","okind":"iri"}
+{"seq":6408,"epoch":1,"op":"+","s":"http://example.org/resource/Person_163","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_23","okind":"iri"}
+{"seq":6409,"epoch":1,"op":"-","s":"http://example.org/resource/Person_571","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_87","okind":"iri"}
+{"seq":6410,"epoch":1,"op":"-","s":"http://example.org/resource/City_98","p":"http://example.org/ontology/country","o":"http://example.org/resource/Country_0","okind":"iri"}
+{"seq":6411,"epoch":1,"op":"+","s":"http://example.org/resource/Person_541","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_53","okind":"iri"}
+{"seq":6412,"epoch":1,"op":"+","s":"http://example.org/resource/Person_239","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6413,"epoch":1,"op":"-","s":"http://example.org/resource/Person_831","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_143","okind":"iri"}
+{"seq":6414,"epoch":1,"op":"-","s":"http://example.org/resource/Film_39","p":"http://example.org/ontology/starring","o":"http://example.org/resource/Person_365","okind":"iri"}
+{"seq":6415,"epoch":1,"op":"-","s":"http://example.org/resource/Person_591","p":"http://example.org/ontology/name","o":"Person 591","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6416,"epoch":1,"op":"-","s":"http://example.org/resource/City_69","p":"http://example.org/ontology/population","o":"940060","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#integer"}
+{"seq":6417,"epoch":1,"op":"+","s":"http://example.org/resource/Person_464","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_90","okind":"iri"}
+{"seq":6418,"epoch":1,"op":"+","s":"http://example.org/resource/Person_894","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_66","okind":"iri"}
+{"seq":6419,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_2","p":"http://example.org/ontology/director","o":"http://example.org/resource/Person_57","okind":"iri"}
+{"seq":6420,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_2","p":"http://example.org/ontology/title","o":"New film","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6421,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_2","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Film","okind":"iri"}
+{"seq":6422,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_2","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Work","okind":"iri"}
+{"seq":6423,"epoch":1,"op":"-","s":"http://example.org/resource/Person_133","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_97","okind":"iri"}
+{"seq":6424,"epoch":1,"op":"-","s":"http://example.org/resource/Person_280","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_57","okind":"iri"}
+{"seq":6425,"epoch":1,"op":"+","s":"http://example.org/resource/Person_844","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_14","okind":"iri"}
+{"seq":6426,"epoch":1,"op":"+","s":"http://example.org/resource/Person_698","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_25","okind":"iri"}
+{"seq":6427,"epoch":1,"op":"-","s":"http://example.org/resource/Org_27","p":"http://example.org/ontology/name","o":"Org 27","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#string"}
+{"seq":6428,"epoch":1,"op":"+","s":"http://example.org/resource/Person_614","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Scientist","okind":"iri"}
+{"seq":6429,"epoch":1,"op":"-","s":"http://example.org/resource/Person_836","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_19","okind":"iri"}
+{"seq":6430,"epoch":1,"op":"+","s":"http://example.org/resource/Person_857","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_66","okind":"iri"}
+{"seq":6431,"epoch":1,"op":"-","s":"http://example.org/resource/Person_604","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_16","okind":"iri"}
+{"seq":6432,"epoch":1,"op":"-","s":"http://example.org/resource/Person_343","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_124","okind":"iri"}
+{"seq":6433,"epoch":1,"op":"-","s":"http://example.org/resource/Person_181","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_92","okind":"iri"}
+{"seq":6434,"epoch":1,"op":"-","s":"http://example.org/resource/Person_454","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_62","okind":"iri"}
+{"seq":6435,"epoch":1,"op":"+","s":"http://example.org/resource/Person_816","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6436,"epoch":1,"op":"-","s":"http://example.org/resource/City_70","p":"http://example.org/ontology/population","o":"1021370","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#integer"}
+{"seq":6437,"epoch":1,"op":"+","s":"http://example.org/resource/Person_374","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_38","okind":"iri"}
+{"seq":6438,"epoch":1,"op":"-","s":"http://example.org/resource/Film_127","p":"http://example.org/ontology/title","o":"Film 127","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6439,"epoch":1,"op":"+","s":"http://example.org/resource/Person_54","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_69","okind":"iri"}
+{"seq":6440,"epoch":1,"op":"+","s":"http://example.org/resource/Person_774","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_65","okind":"iri"}
+{"seq":6441,"epoch":1,"op":"-","s":"http://example.org/resource/Person_18","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_20","okind":"iri"}
+{"seq":6442,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_43","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_98","okind":"iri"}
+{"seq":6443,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_43","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6444,"epoch":1,"op":"-","s":"http://example.org/resource/Person_191","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_106","okind":"iri"}
+{"seq":6445,"epoch":1,"op":"-","s":"http://example.org/resource/Person_191","p":"http://example.org/ontology/name","o":"Person 191","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6446,"epoch":1,"op":"+","s":"http://example.org/resource/Person_480","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_79","okind":"iri"}
+{"seq":6447,"epoch":1,"op":"-","s":"http://example.org/resource/Org_66","p":"http://example.org/ontology/location","o":"http://example.org/resource/City_101","okind":"iri"}
+{"seq":6448,"epoch":1,"op":"-","s":"http://example.org/resource/Film_98","p":"http://example.org/ontology/starring","o":"http://example.org/resource/Person_877","okind":"iri"}
+{"seq":6449,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_5","p":"http://example.org/ontology/director","o":"http://example.org/resource/Person_262","okind":"iri"}
+{"seq":6450,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_5","p":"http://example.org/ontology/title","o":"New film","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6451,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_5","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Film","okind":"iri"}
+{"seq":6452,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_5","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Work","okind":"iri"}
+{"seq":6453,"epoch":1,"op":"-","s":"http://example.org/resource/Film_144","p":"http://example.org/ontology/runtime","o":"123.0","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#double"}
+{"seq":6454,"epoch":1,"op":"+","s":"http://example.org/resource/Person_824","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_59","okind":"iri"}
+{"seq":6455,"epoch":1,"op":"-","s":"http://example.org/resource/Person_248","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_14","okind":"iri"}
+{"seq":6456,"epoch":1,"op":"-","s":"http://example.org/resource/Person_476","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_38","okind":"iri"}
+{"seq":6457,"epoch":1,"op":"+","s":"http://example.org/resource/Person_586","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_33","okind":"iri"}
+{"seq":6458,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_8","p":"http://example.org/ontology/almaMater","o":"http://example.org/resource/Org_1","okind":"iri"}
+{"seq":6459,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_8","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_77","okind":"iri"}
+{"seq":6460,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_8","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6461,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_28","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_123","okind":"iri"}
+{"seq":6462,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_28","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6463,"epoch":1,"op":"-","s":"http://example.org/resource/Film_44","p":"http://example.org/ontology/starring","o":"http://example.org/resource/Person_104","okind":"iri"}
+{"seq":6464,"epoch":1,"op":"-","s":"http://example.org/resource/Person_444","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_96","okind":"iri"}
+{"seq":6465,"epoch":1,"op":"+","s":"http://example.org/resource/Person_308","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_26","okind":"iri"}
+{"seq":6466,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_50","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_79","okind":"iri"}
+{"seq":6467,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_50","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6468,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_50","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6469,"epoch":1,"op":"-","s":"http://example.org/resource/Film_86","p":"http://example.org/ontology/starring","o":"http://example.org/resource/Person_744","okind":"iri"}
+{"seq":6470,"epoch":1,"op":"-","s":"http://example.org/resource/Person_877","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_89","okind":"iri"}
+{"seq":6471,"epoch":1,"op":"-","s":"http://example.org/resource/Person_649","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_81","okind":"iri"}
+{"seq":6472,"epoch":1,"op":"+","s":"http://example.org/resource/Person_873","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Scientist","okind":"iri"}
+{"seq":6473,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_20","p":"http://example.org/ontology/almaMater","o":"http://example.org/resource/Org_73","okind":"iri"}
+{"seq":6474,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_20","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_63","okind":"iri"}
+{"seq":6475,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_20","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6476,"epoch":1,"op":"-","s":"http://example.org/resource/Person_104","p":"http://example.org/ontology/name","o":"Person 104","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6477,"epoch":1,"op":"-","s":"http://example.org/resource/Film_74","p":"http://example.org/ontology/starring","o":"http://example.org/resource/Person_279","okind":"iri"}
+{"seq":6478,"epoch":1,"op":"-","s":"http://example.org/resource/City_46","p":"http://example.org/ontology/name","o":"City 46","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6479,"epoch":1,"op":"-","s":"http://example.org/resource/Film_99","p":"http://example.org/ontology/runtime","o":"100.0","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#double"}
+{"seq":6480,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_51","p":"http://example.org/ontology/almaMater","o":"http://example.org/resource/Org_42","okind":"iri"}
+{"seq":6481,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_51","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_96","okind":"iri"}
+{"seq":6482,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_51","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6483,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_51","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6484,"epoch":1,"op":"-","s":"http://example.org/resource/Person_247","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_45","okind":"iri"}
+{"seq":6485,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_27","p":"http://example.org/ontology/almaMater","o":"http://example.org/resource/Org_21","okind":"iri"}
+{"seq":6486,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_27","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_146","okind":"iri"}
+{"seq":6487,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_27","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6488,"epoch":1,"op":"+","s":"http://example.org/resource/Person_88","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6489,"epoch":1,"op":"+","s":"http://example.org/resource/Person_620","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6490,"epoch":1,"op":"-","s":"http://example.org/resource/Person_550","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_116","okind":"iri"}
+{"seq":6491,"epoch":1,"op":"-","s":"http://example.org/resource/Person_674","p":"http://example.org/ontology/name","o":"Person 674","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6492,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_10","p":"http://example.org/ontology/director","o":"http://example.org/resource/Person_76","okind":"iri"}
+{"seq":6493,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_10","p":"http://example.org/ontology/title","o":"New film","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6494,"epoch":1,"op":"-","s":"http://example.org/resource/Person_679","p":"http://example.org/ontology/name","o":"Person 679","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6495,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_18","p":"http://example.org/ontology/almaMater","o":"http://example.org/resource/Org_19","okind":"iri"}
+{"seq":6496,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_18","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_76","okind":"iri"}
+{"seq":6497,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_18","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6498,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_54","p":"http://example.org/ontology/almaMater","o":"http://example.org/resource/Org_9","okind":"iri"}
+{"seq":6499,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_54","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_104","okind":"iri"}
+{"seq":6500,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_54","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6501,"epoch":1,"op":"-","s":"http://example.org/resource/Person_739","p":"http://example.org/ontology/birthDate","o":"1985-01-15","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#date"}
+{"seq":6502,"epoch":1,"op":"-","s":"http://example.org/resource/Person_764","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_134","okind":"iri"}
+{"seq":6503,"epoch":1,"op":"+","s":"http://example.org/resource/Person_764","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6504,"epoch":1,"op":"-","s":"http://example.org/resource/Person_206","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_22","okind":"iri"}
+{"seq":6505,"epoch":1,"op":"+","s":"http://example.org/resource/Person_210","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_13","okind":"iri"}
+{"seq":6506,"epoch":1,"op":"-","s":"http://example.org/resource/Person_158","p":"http://example.org/ontology/birthDate","o":"1953-05-19","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#date"}
+{"seq":6507,"epoch":1,"op":"+","s":"http://example.org/resource/Person_158","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_7","okind":"iri"}
+{"seq":6508,"epoch":1,"op":"-","s":"http://example.org/resource/Person_426","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_127","okind":"iri"}
+{"seq":6509,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_4","p":"http://example.org/ontology/director","o":"http://example.org/resource/Person_820","okind":"iri"}
+{"seq":6510,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_4","p":"http://example.org/ontology/title","o":"New film","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6511,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_4","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Film","okind":"iri"}
+{"seq":6512,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_4","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Work","okind":"iri"}
+{"seq":6513,"epoch":1,"op":"-","s":"http://example.org/resource/Film_134","p":"http://example.org/ontology/director","o":"http://example.org/resource/Person_442","okind":"iri"}
+{"seq":6514,"epoch":1,"op":"+","s":"http://example.org/resource/Person_356","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_103","okind":"iri"}
+{"seq":6515,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_7","p":"http://example.org/ontology/director","o":"http://example.org/resource/Person_612","okind":"iri"}
+{"seq":6516,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_7","p":"http://example.org/ontology/title","o":"New film","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6517,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_7","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Film","okind":"iri"}
+{"seq":6518,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_7","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Work","okind":"iri"}
+{"seq":6519,"epoch":1,"op":"-","s":"http://example.org/resource/Person_406","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_25","okind":"iri"}
+{"seq":6520,"epoch":1,"op":"-","s":"http://example.org/resource/Person_20","p":"http://example.org/ontology/name","o":"Person 20","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6521,"epoch":1,"op":"-","s":"http://example.org/resource/Person_282","p":"http://example.org/ontology/name","o":"Person 282","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6522,"epoch":1,"op":"+","s":"http://example.org/resource/Person_282","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Scientist","okind":"iri"}
+{"seq":6523,"epoch":1,"op":"-","s":"http://example.org/resource/Person_91","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_13","okind":"iri"}
+{"seq":6524,"epoch":1,"op":"+","s":"http://example.org/resource/Person_91","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_101","okind":"iri"}
+{"seq":6525,"epoch":1,"op":"+","s":"http://example.org/resource/Person_331","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_39","okind":"iri"}
+{"seq":6526,"epoch":1,"op":"-","s":"http://example.org/resource/Person_626","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_89","okind":"iri"}
+{"seq":6527,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_48","p":"http://example.org/ontology/almaMater","o":"http://example.org/resource/Org_90","okind":"iri"}
+{"seq":6528,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_48","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_41","okind":"iri"}
+{"seq":6529,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_48","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6530,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_57","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_48","okind":"iri"}
+{"seq":6531,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_57","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6532,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_57","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6533,"epoch":1,"op":"+","s":"http://example.org/resource/Person_123","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_28","okind":"iri"}
+{"seq":6534,"epoch":1,"op":"-","s":"http://example.org/resource/Person_423","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_117","okind":"iri"}
+{"seq":6535,"epoch":1,"op":"+","s":"http://example.org/resource/Person_423","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_14","okind":"iri"}
+{"seq":6536,"epoch":1,"op":"-","s":"http://example.org/resource/Person_57","p":"http://example.org/ontology/birthDate","o":"1934-01-13","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#date"}
+{"seq":6537,"epoch":1,"op":"+","s":"http://example.org/resource/Person_57","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_50","okind":"iri"}
+{"seq":6538,"epoch":1,"op":"-","s":"http://example.org/resource/Person_752","p":"http://example.org/ontology/birthDate","o":"1958-07-10","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#date"}
+{"seq":6539,"epoch":1,"op":"+","s":"http://example.org/resource/Person_164","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_7","okind":"iri"}
+{"seq":6540,"epoch":1,"op":"-","s":"http://example.org/resource/Person_300","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_17","okind":"iri"}
+{"seq":6541,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_30","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_122","okind":"iri"}
+{"seq":6542,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_30","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6543,"epoch":1,"op":"-","s":"http://example.org/resource/Person_445","p":"http://example.org/ontology/name","o":"Person 445","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6544,"epoch":1,"op":"-","s":"http://example.org/resource/Person_596","p":"http://example.org/ontology/name","o":"Person 596","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6545,"epoch":1,"op":"+","s":"http://example.org/resource/Person_596","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_105","okind":"iri"}
+{"seq":6546,"epoch":1,"op":"+","s":"http://example.org/resource/Person_471","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_99","okind":"iri"}
+{"seq":6547,"epoch":1,"op":"+","s":"http://example.org/resource/Person_471","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Scientist","okind":"iri"}
+{"seq":6548,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_14","p":"http://example.org/ontology/director","o":"http://example.org/resource/Person_329","okind":"iri"}
+{"seq":6549,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_14","p":"http://example.org/ontology/title","o":"New film","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6550,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_13","p":"http://example.org/ontology/almaMater","o":"http://example.org/resource/Org_63","okind":"iri"}
+{"seq":6551,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_13","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_144","okind":"iri"}
+{"seq":6552,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_13","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6553,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_13","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6554,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_34","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_145","okind":"iri"}
+{"seq":6555,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_34","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6556,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_34","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6557,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_19","p":"http://example.org/ontology/director","o":"http://example.org/resource/Person_676","okind":"iri"}
+{"seq":6558,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_19","p":"http://example.org/ontology/title","o":"New film","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6559,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_19","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Film","okind":"iri"}
+{"seq":6560,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_19","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Work","okind":"iri"}
+{"seq":6561,"epoch":1,"op":"-","s":"http://example.org/resource/Film_17","p":"http://example.org/ontology/title","o":"Film 17","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6562,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_15","p":"http://example.org/ontology/director","o":"http://example.org/resource/Person_125","okind":"iri"}
+{"seq":6563,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_15","p":"http://example.org/ontology/title","o":"New film","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6564,"epoch":1,"op":"-","s":"http://example.org/resource/Person_263","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_110","okind":"iri"}
+{"seq":6565,"epoch":1,"op":"+","s":"http://example.org/resource/Person_263","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_77","okind":"iri"}
+{"seq":6566,"epoch":1,"op":"+","s":"http://example.org/resource/Person_12","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_19","okind":"iri"}
+{"seq":6567,"epoch":1,"op":"-","s":"http://example.org/resource/Person_35","p":"http://example.org/ontology/name","o":"Person 35","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6568,"epoch":1,"op":"+","s":"http://example.org/resource/Person_35","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Scientist","okind":"iri"}
+{"seq":6569,"epoch":1,"op":"-","s":"http://example.org/resource/Org_54","p":"http://example.org/ontology/location","o":"http://example.org/resource/City_83","okind":"iri"}
+{"seq":6570,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_45","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_70","okind":"iri"}
+{"seq":6571,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_45","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6572,"epoch":1,"op":"+","s":"http://example.org/resource/Person_449","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_31","okind":"iri"}
+{"seq":6573,"epoch":1,"op":"-","s":"http://example.org/resource/Person_235","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_133","okind":"iri"}
+{"seq":6574,"epoch":1,"op":"+","s":"http://example.org/resource/Person_242","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_25","okind":"iri"}
+{"seq":6575,"epoch":1,"op":"+","s":"http://example.org/resource/Person_218","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_105","okind":"iri"}
+{"seq":6576,"epoch":1,"op":"+","s":"http://example.org/resource/Person_595","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_106","okind":"iri"}
+{"seq":6577,"epoch":1,"op":"+","s":"http://example.org/resource/Person_676","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_80","okind":"iri"}
+{"seq":6578,"epoch":1,"op":"-","s":"http://example.org/resource/Person_465","p":"http://example.org/ontology/birthDate","o":"1981-01-19","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#date"}
+{"seq":6579,"epoch":1,"op":"+","s":"http://example.org/resource/Person_465","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Scientist","okind":"iri"}
+{"seq":6580,"epoch":1,"op":"-","s":"http://example.org/resource/Film_89","p":"http://example.org/ontology/starring","o":"http://example.org/resource/Person_750","okind":"iri"}
+{"seq":6581,"epoch":1,"op":"+","s":"http://example.org/resource/Person_79","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_113","okind":"iri"}
+{"seq":6582,"epoch":1,"op":"-","s":"http://example.org/resource/Person_65","p":"http://example.org/ontology/name","o":"Person 65","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6583,"epoch":1,"op":"-","s":"http://example.org/resource/Film_106","p":"http://example.org/ontology/starring","o":"http://example.org/resource/Person_842","okind":"iri"}
+{"seq":6584,"epoch":1,"op":"+","s":"http://example.org/resource/Person_289","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Scientist","okind":"iri"}
+{"seq":6585,"epoch":1,"op":"-","s":"http://example.org/resource/Person_891","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_20","okind":"iri"}
+{"seq":6586,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_41","p":"http://example.org/ontology/almaMater","o":"http://example.org/resource/Org_19","okind":"iri"}
+{"seq":6587,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_41","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_29","okind":"iri"}
+{"seq":6588,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_41","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6589,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_41","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6590,"epoch":1,"op":"+","s":"http://example.org/resource/Person_455","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Scientist","okind":"iri"}
+{"seq":6591,"epoch":1,"op":"+","s":"http://example.org/resource/Person_451","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_13","okind":"iri"}
+{"seq":6592,"epoch":1,"op":"-","s":"http://example.org/resource/Person_823","p":"http://example.org/ontology/birthDate","o":"1974-07-14","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#date"}
+{"seq":6593,"epoch":1,"op":"-","s":"http://example.org/resource/Person_539","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_70","okind":"iri"}
+{"seq":6594,"epoch":1,"op":"-","s":"http://example.org/resource/Person_801","p":"http://example.org/ontology/name","o":"Person 801","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6595,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_1","p":"http://example.org/ontology/director","o":"http://example.org/resource/Person_747","okind":"iri"}
+{"seq":6596,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_1","p":"http://example.org/ontology/title","o":"New film","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6597,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_1","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Film","okind":"iri"}
+{"seq":6598,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_1","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Work","okind":"iri"}
+{"seq":6599,"epoch":1,"op":"+","s":"http://example.org/resource/Person_391","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6600,"epoch":1,"op":"-","s":"http://example.org/resource/Person_427","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_19","okind":"iri"}
+{"seq":6601,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_39","p":"http://example.org/ontology/almaMater","o":"http://example.org/resource/Org_97","okind":"iri"}
+{"seq":6602,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_39","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_3","okind":"iri"}
+{"seq":6603,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_39","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6604,"epoch":1,"op":"-","s":"http://example.org/resource/Film_151","p":"http://example.org/ontology/starring","o":"http://example.org/resource/Person_558","okind":"iri"}
+{"seq":6605,"epoch":1,"op":"-","s":"http://example.org/resource/Person_80","p":"http://example.org/ontology/birthDate","o":"1937-07-14","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#date"}
+{"seq":6606,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_58","p":"http://example.org/ontology/almaMater","o":"http://example.org/resource/Org_21","okind":"iri"}
+{"seq":6607,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_58","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_120","okind":"iri"}
+{"seq":6608,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_58","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6609,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_58","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6610,"epoch":1,"op":"+","s":"http://example.org/resource/Person_845","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_34","okind":"iri"}
+{"seq":6611,"epoch":1,"op":"-","s":"http://example.org/resource/Person_214","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_27","okind":"iri"}
+{"seq":6612,"epoch":1,"op":"-","s":"http://example.org/resource/Person_71","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_136","okind":"iri"}
+{"seq":6613,"epoch":1,"op":"-","s":"http://example.org/resource/Film_34","p":"http://example.org/ontology/starring","o":"http://example.org/resource/Person_7","okind":"iri"}
+{"seq":6614,"epoch":1,"op":"-","s":"http://example.org/resource/Person_552","p":"http://example.org/ontology/name","o":"Person 552","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6615,"epoch":1,"op":"-","s":"http://example.org/resource/Person_175","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_44","okind":"iri"}
+{"seq":6616,"epoch":1,"op":"-","s":"http://example.org/resource/Film_13","p":"http://example.org/ontology/starring","o":"http://example.org/resource/Person_791","okind":"iri"}
+{"seq":6617,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_11","p":"http://example.org/ontology/director","o":"http://example.org/resource/Person_420","okind":"iri"}
+{"seq":6618,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_11","p":"http://example.org/ontology/title","o":"New film","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6619,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_11","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Film","okind":"iri"}
+{"seq":6620,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_11","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Work","okind":"iri"}
+{"seq":6621,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_46","p":"http://example.org/ontology/almaMater","o":"http://example.org/resource/Org_97","okind":"iri"}
+{"seq":6622,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_46","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_130","okind":"iri"}
+{"seq":6623,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_46","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6624,"epoch":1,"op":"-","s":"http://example.org/resource/Person_192","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_119","okind":"iri"}
+{"seq":6625,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_37","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_23","okind":"iri"}
+{"seq":6626,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_37","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6627,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_37","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6628,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_22","p":"http://example.org/ontology/almaMater","o":"http://example.org/resource/Org_71","okind":"iri"}
+{"seq":6629,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_22","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_139","okind":"iri"}
+{"seq":6630,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_22","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6631,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_22","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6632,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_44","p":"http://example.org/ontology/almaMater","o":"http://example.org/resource/Org_12","okind":"iri"}
+{"seq":6633,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_44","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_73","okind":"iri"}
+{"seq":6634,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_44","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6635,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_44","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6636,"epoch":1,"op":"-","s":"http://example.org/resource/Film_194","p":"http://example.org/ontology/starring","o":"http://example.org/resource/Person_813","okind":"iri"}
+{"seq":6637,"epoch":1,"op":"-","s":"http://example.org/resource/Person_581","p":"http://example.org/ontology/name","o":"Person 581","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6638,"epoch":1,"op":"-","s":"http://example.org/resource/Person_842","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_120","okind":"iri"}
+{"seq":6639,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_36","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_127","okind":"iri"}
+{"seq":6640,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_36","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6641,"epoch":1,"op":"-","s":"http://example.org/resource/Person_761","p":"http://example.org/ontology/name","o":"Person 761","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6642,"epoch":1,"op":"+","s":"http://example.org/resource/Person_188","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_92","okind":"iri"}
+{"seq":6643,"epoch":1,"op":"-","s":"http://example.org/resource/Person_618","p":"http://example.org/ontology/birthDate","o":"1968-04-10","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#date"}
+{"seq":6644,"epoch":1,"op":"+","s":"http://example.org/resource/Person_533","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_59","okind":"iri"}
+{"seq":6645,"epoch":1,"op":"-","s":"http://example.org/resource/Person_32","p":"http://example.org/ontology/name","o":"Person 32","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6646,"epoch":1,"op":"-","s":"http://example.org/resource/Person_532","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_94","okind":"iri"}
+{"seq":6647,"epoch":1,"op":"-","s":"http://example.org/resource/Film_167","p":"http://example.org/ontology/director","o":"http://example.org/resource/Person_487","okind":"iri"}
+{"seq":6648,"epoch":1,"op":"+","s":"http://example.org/resource/Person_211","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_24","okind":"iri"}
+{"seq":6649,"epoch":1,"op":"-","s":"http://example.org/resource/Person_467","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_76","okind":"iri"}
+{"seq":6650,"epoch":1,"op":"+","s":"http://example.org/resource/Person_221","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_38","okind":"iri"}
+{"seq":6651,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_24","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_127","okind":"iri"}
+{"seq":6652,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_24","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6653,"epoch":1,"op":"-","s":"http://example.org/resource/Film_155","p":"http://example.org/ontology/starring","o":"http://example.org/resource/Person_833","okind":"iri"}
+{"seq":6654,"epoch":1,"op":"-","s":"http://example.org/resource/Person_660","p":"http://example.org/ontology/birthDate","o":"1950-09-11","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#date"}
+{"seq":6655,"epoch":1,"op":"-","s":"http://example.org/resource/Person_405","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_15","okind":"iri"}
+{"seq":6656,"epoch":1,"op":"-","s":"http://example.org/resource/Film_125","p":"http://example.org/ontology/starring","o":"http://example.org/resource/Person_865","okind":"iri"}
+{"seq":6657,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_4","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_35","okind":"iri"}
+{"seq":6658,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_4","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6659,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_4","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6660,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_17","p":"http://example.org/ontology/almaMater","o":"http://example.org/resource/Org_100","okind":"iri"}
+{"seq":6661,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_17","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_109","okind":"iri"}
+{"seq":6662,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_17","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6663,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_17","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6664,"epoch":1,"op":"+","s":"http://example.org/resource/Person_678","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_65","okind":"iri"}
+{"seq":6665,"epoch":1,"op":"-","s":"http://example.org/resource/Person_512","p":"http://example.org/ontology/name","o":"Person 512","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6666,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_10","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_65","okind":"iri"}
+{"seq":6667,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_10","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6668,"epoch":1,"op":"+","s":"http://example.org/resource/Person_416","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_117","okind":"iri"}
+{"seq":6669,"epoch":1,"op":"-","s":"http://example.org/resource/Person_375","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_125","okind":"iri"}
+{"seq":6670,"epoch":1,"op":"-","s":"http://example.org/resource/Person_309","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_62","okind":"iri"}
+{"seq":6671,"epoch":1,"op":"-","s":"http://example.org/resource/Person_340","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_68","okind":"iri"}
+{"seq":6672,"epoch":1,"op":"-","s":"http://example.org/resource/Person_721","p":"http://example.org/ontology/birthDate","o":"1967-03-17","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#date"}
+{"seq":6673,"epoch":1,"op":"-","s":"http://example.org/resource/Person_599","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_99","okind":"iri"}
+{"seq":6674,"epoch":1,"op":"+","s":"http://example.org/resource/Person_599","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_69","okind":"iri"}
+{"seq":6675,"epoch":1,"op":"-","s":"http://example.org/resource/Person_884","p":"http://example.org/ontology/birthDate","o":"1921-05-11","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#date"}
+{"seq":6676,"epoch":1,"op":"-","s":"http://example.org/resource/Person_884","p":"http://example.org/ontology/name","o":"Person 884","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6677,"epoch":1,"op":"-","s":"http://example.org/resource/Person_812","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_42","okind":"iri"}
+{"seq":6678,"epoch":1,"op":"-","s":"http://example.org/resource/Person_812","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_64","okind":"iri"}
+{"seq":6679,"epoch":1,"op":"-","s":"http://example.org/resource/Org_60","p":"http://example.org/ontology/name","o":"Org 60","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#string"}
+{"seq":6680,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_1","p":"http://example.org/ontology/almaMater","o":"http://example.org/resource/Org_44","okind":"iri"}
+{"seq":6681,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_1","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_67","okind":"iri"}
+{"seq":6682,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_1","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6683,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_38","p":"http://example.org/ontology/almaMater","o":"http://example.org/resource/Org_23","okind":"iri"}
+{"seq":6684,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_38","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_127","okind":"iri"}
+{"seq":6685,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_38","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6686,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_38","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6687,"epoch":1,"op":"-","s":"http://example.org/resource/Film_36","p":"http://example.org/ontology/starring","o":"http://example.org/resource/Person_691","okind":"iri"}
+{"seq":6688,"epoch":1,"op":"+","s":"http://example.org/resource/Person_889","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Scientist","okind":"iri"}
+{"seq":6689,"epoch":1,"op":"-","s":"http://example.org/resource/Film_172","p":"http://example.org/ontology/starring","o":"http://example.org/resource/Person_43","okind":"iri"}
+{"seq":6690,"epoch":1,"op":"-","s":"http://example.org/resource/Person_122","p":"http://example.org/ontology/name","o":"Person 122","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6691,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_0","p":"http://example.org/ontology/director","o":"http://example.org/resource/Person_342","okind":"iri"}
+{"seq":6692,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_0","p":"http://example.org/ontology/title","o":"New film","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6693,"epoch":1,"op":"-","s":"http://example.org/resource/Film_183","p":"http://example.org/ontology/starring","o":"http://example.org/resource/Person_495","okind":"iri"}
+{"seq":6694,"epoch":1,"op":"-","s":"http://example.org/resource/Film_164","p":"http://example.org/ontology/director","o":"http://example.org/resource/Person_70","okind":"iri"}
+{"seq":6695,"epoch":1,"op":"-","s":"http://example.org/resource/Film_95","p":"http://example.org/ontology/director","o":"http://example.org/resource/Person_224","okind":"iri"}
+{"seq":6696,"epoch":1,"op":"-","s":"http://example.org/resource/Person_765","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_11","okind":"iri"}
+{"seq":6697,"epoch":1,"op":"+","s":"http://example.org/resource/Person_422","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_96","okind":"iri"}
+{"seq":6698,"epoch":1,"op":"-","s":"http://example.org/resource/Film_170","p":"http://example.org/ontology/title","o":"Film 170","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6699,"epoch":1,"op":"+","s":"http://example.org/resource/Person_260","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_49","okind":"iri"}
+{"seq":6700,"epoch":1,"op":"-","s":"http://example.org/resource/Person_519","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_39","okind":"iri"}
+{"seq":6701,"epoch":1,"op":"+","s":"http://example.org/resource/Person_519","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_46","okind":"iri"}
+{"seq":6702,"epoch":1,"op":"-","s":"http://example.org/resource/Person_851","p":"http://example.org/ontology/name","o":"Person 851","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6703,"epoch":1,"op":"+","s":"http://example.org/resource/Person_514","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_113","okind":"iri"}
+{"seq":6704,"epoch":1,"op":"-","s":"http://example.org/resource/Person_96","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_28","okind":"iri"}
+{"seq":6705,"epoch":1,"op":"-","s":"http://example.org/resource/Person_572","p":"http://example.org/ontology/name","o":"Person 572","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6706,"epoch":1,"op":"+","s":"http://example.org/resource/Person_641","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_17","okind":"iri"}
+{"seq":6707,"epoch":1,"op":"-","s":"http://example.org/resource/City_47","p":"http://example.org/ontology/population","o":"4802958","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#integer"}
+{"seq":6708,"epoch":1,"op":"+","s":"http://example.org/resource/Person_680","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_60","okind":"iri"}
+{"seq":6709,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_2","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_49","okind":"iri"}
+{"seq":6710,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_2","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6711,"epoch":1,"op":"-","s":"http://example.org/resource/City_105","p":"http://example.org/ontology/country","o":"http://example.org/resource/Country_5","okind":"iri"}
+{"seq":6712,"epoch":1,"op":"-","s":"http://example.org/resource/Person_150","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_27","okind":"iri"}
+{"seq":6713,"epoch":1,"op":"+","s":"http://example.org/resource/Person_665","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_89","okind":"iri"}
+{"seq":6714,"epoch":1,"op":"-","s":"http://example.org/resource/City_117","p":"http://example.org/ontology/name","o":"City 117","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6715,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_35","p":"http://example.org/ontology/almaMater","o":"http://example.org/resource/Org_6","okind":"iri"}
+{"seq":6716,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_35","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_30","okind":"iri"}
+{"seq":6717,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_35","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6718,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_35","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6719,"epoch":1,"op":"+","s":"http://example.org/resource/Person_523","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_109","okind":"iri"}
+{"seq":6720,"epoch":1,"op":"-","s":"http://example.org/resource/City_103","p":"http://example.org/ontology/name","o":"City 103","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6721,"epoch":1,"op":"-","s":"http://example.org/resource/Person_132","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_12","okind":"iri"}
+{"seq":6722,"epoch":1,"op":"-","s":"http://example.org/resource/City_5","p":"http://example.org/ontology/population","o":"2500617","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#integer"}
+{"seq":6723,"epoch":1,"op":"-","s":"http://example.org/resource/Film_182","p":"http://example.org/ontology/title","o":"Film 182","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6724,"epoch":1,"op":"-","s":"http://example.org/resource/Person_275","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_98","okind":"iri"}
+{"seq":6725,"epoch":1,"op":"-","s":"http://example.org/resource/Org_94","p":"http://example.org/ontology/location","o":"http://example.org/resource/City_73","okind":"iri"}
+{"seq":6726,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_7","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_79","okind":"iri"}
+{"seq":6727,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_7","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6728,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_5","p":"http://example.org/ontology/almaMater","o":"http://example.org/resource/Org_75","okind":"iri"}
+{"seq":6729,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_5","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_14","okind":"iri"}
+{"seq":6730,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_5","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6731,"epoch":1,"op":"-","s":"http://example.org/resource/Person_699","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_9","okind":"iri"}
+{"seq":6732,"epoch":1,"op":"-","s":"http://example.org/resource/Person_219","p":"http://example.org/ontology/name","o":"Person 219","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6733,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_17","p":"http://example.org/ontology/director","o":"http://example.org/resource/Person_310","okind":"iri"}
+{"seq":6734,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_17","p":"http://example.org/ontology/title","o":"New film","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6735,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_17","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Film","okind":"iri"}
+{"seq":6736,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_17","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Work","okind":"iri"}
+{"seq":6737,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_56","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_101","okind":"iri"}
+{"seq":6738,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_56","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6739,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_56","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6740,"epoch":1,"op":"+","s":"http://example.org/resource/Person_696","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_38","okind":"iri"}
+{"seq":6741,"epoch":1,"op":"-","s":"http://example.org/resource/City_124","p":"http://example.org/ontology/country","o":"http://example.org/resource/Country_6","okind":"iri"}
+{"seq":6742,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_19","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_144","okind":"iri"}
+{"seq":6743,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_19","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6744,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_19","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6745,"epoch":1,"op":"+","s":"http://example.org/resource/Person_677","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_93","okind":"iri"}
+{"seq":6746,"epoch":1,"op":"+","s":"http://example.org/resource/Person_209","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_67","okind":"iri"}
+{"seq":6747,"epoch":1,"op":"-","s":"http://example.org/resource/Person_258","p":"http://example.org/ontology/birthDate","o":"1949-02-19","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#date"}
+{"seq":6748,"epoch":1,"op":"+","s":"http://example.org/resource/Person_619","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_73","okind":"iri"}
+{"seq":6749,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_18","p":"http://example.org/ontology/director","o":"http://example.org/resource/Person_65","okind":"iri"}
+{"seq":6750,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_18","p":"http://example.org/ontology/title","o":"New film","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6751,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_18","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Film","okind":"iri"}
+{"seq":6752,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_18","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Work","okind":"iri"}
+{"seq":6753,"epoch":1,"op":"+","s":"http://example.org/resource/Person_313","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_6","okind":"iri"}
+{"seq":6754,"epoch":1,"op":"-","s":"http://example.org/resource/Film_69","p":"http://example.org/ontology/starring","o":"http://example.org/resource/Person_797","okind":"iri"}
+{"seq":6755,"epoch":1,"op":"-","s":"http://example.org/resource/Org_75","p":"http://example.org/ontology/name","o":"Org 75","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#string"}
+{"seq":6756,"epoch":1,"op":"-","s":"http://example.org/resource/Person_161","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_101","okind":"iri"}
+{"seq":6757,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_3","p":"http://example.org/ontology/director","o":"http://example.org/resource/Person_266","okind":"iri"}
+{"seq":6758,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_3","p":"http://example.org/ontology/title","o":"New film","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6759,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_3","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Film","okind":"iri"}
+{"seq":6760,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_3","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Work","okind":"iri"}
+{"seq":6761,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_0","p":"http://example.org/ontology/almaMater","o":"http://example.org/resource/Org_20","okind":"iri"}
+{"seq":6762,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_0","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_71","okind":"iri"}
+{"seq":6763,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_0","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6764,"epoch":1,"op":"-","s":"http://example.org/resource/Person_170","p":"http://example.org/ontology/name","o":"Person 170","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6765,"epoch":1,"op":"-","s":"http://example.org/resource/Person_440","p":"http://example.org/ontology/name","o":"Person 440","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6766,"epoch":1,"op":"-","s":"http://example.org/resource/Film_55","p":"http://example.org/ontology/director","o":"http://example.org/resource/Person_678","okind":"iri"}
+{"seq":6767,"epoch":1,"op":"+","s":"http://example.org/resource/Person_885","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Scientist","okind":"iri"}
+{"seq":6768,"epoch":1,"op":"+","s":"http://example.org/resource/Person_697","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_75","okind":"iri"}
+{"seq":6769,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_3","p":"http://example.org/ontology/almaMater","o":"http://example.org/resource/Org_101","okind":"iri"}
+{"seq":6770,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_3","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_49","okind":"iri"}
+{"seq":6771,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_3","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6772,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_3","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6773,"epoch":1,"op":"-","s":"http://example.org/resource/Film_139","p":"http://example.org/ontology/runtime","o":"129.0","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#double"}
+{"seq":6774,"epoch":1,"op":"-","s":"http://example.org/resource/Person_507","p":"http://example.org/ontology/birthDate","o":"1945-08-13","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#date"}
+{"seq":6775,"epoch":1,"op":"-","s":"http://example.org/resource/City_135","p":"http://example.org/ontology/name","o":"City 135","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6776,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_59","p":"http://example.org/ontology/almaMater","o":"http://example.org/resource/Org_105","okind":"iri"}
+{"seq":6777,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_59","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_78","okind":"iri"}
+{"seq":6778,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_59","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6779,"epoch":1,"op":"+","s":"http://example.org/resource/Person_228","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_41","okind":"iri"}
+{"seq":6780,"epoch":1,"op":"-","s":"http://example.org/resource/Person_45","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_34","okind":"iri"}
+{"seq":6781,"epoch":1,"op":"-","s":"http://example.org/resource/Film_116","p":"http://example.org/ontology/title","o":"Film 116","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6782,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_32","p":"http://example.org/ontology/almaMater","o":"http://example.org/resource/Org_59","okind":"iri"}
+{"seq":6783,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_32","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_149","okind":"iri"}
+{"seq":6784,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_32","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6785,"epoch":1,"op":"+","s":"http://example.org/resource/Person_420","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_69","okind":"iri"}
+{"seq":6786,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_40","p":"http://example.org/ontology/almaMater","o":"http://example.org/resource/Org_24","okind":"iri"}
+{"seq":6787,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_40","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_62","okind":"iri"}
+{"seq":6788,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_40","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6789,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_40","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6790,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_25","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_59","okind":"iri"}
+{"seq":6791,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_25","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6792,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_25","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6793,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_9","p":"http://example.org/ontology/director","o":"http://example.org/resource/Person_409","okind":"iri"}
+{"seq":6794,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_9","p":"http://example.org/ontology/title","o":"New film","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6795,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_9","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Film","okind":"iri"}
+{"seq":6796,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_9","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Work","okind":"iri"}
+{"seq":6797,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_12","p":"http://example.org/ontology/almaMater","o":"http://example.org/resource/Org_5","okind":"iri"}
+{"seq":6798,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_12","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_146","okind":"iri"}
+{"seq":6799,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_12","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6800,"epoch":1,"op":"-","s":"http://example.org/resource/Person_800","p":"http://example.org/ontology/birthDate","o":"1944-09-19","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#date"}
+{"seq":6801,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_12","p":"http://example.org/ontology/director","o":"http://example.org/resource/Person_738","okind":"iri"}
+{"seq":6802,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_12","p":"http://example.org/ontology/title","o":"New film","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6803,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_13","p":"http://example.org/ontology/director","o":"http://example.org/resource/Person_29","okind":"iri"}
+{"seq":6804,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_13","p":"http://example.org/ontology/title","o":"New film","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6805,"epoch":1,"op":"-","s":"http://example.org/resource/Person_183","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_71","okind":"iri"}
+{"seq":6806,"epoch":1,"op":"-","s":"http://example.org/resource/Person_898","p":"http://example.org/ontology/name","o":"Person 898","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6807,"epoch":1,"op":"+","s":"http://example.org/resource/Person_898","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_20","okind":"iri"}
+{"seq":6808,"epoch":1,"op":"-","s":"http://example.org/resource/City_44","p":"http://example.org/ontology/name","o":"City 44","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6809,"epoch":1,"op":"-","s":"http://example.org/resource/City_99","p":"http://example.org/ontology/country","o":"http://example.org/resource/Country_5","okind":"iri"}
+{"seq":6810,"epoch":1,"op":"-","s":"http://example.org/resource/Person_152","p":"http://example.org/ontology/name","o":"Person 152","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6811,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_21","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_21","okind":"iri"}
+{"seq":6812,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_21","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6813,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_21","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6814,"epoch":1,"op":"-","s":"http://example.org/resource/Person_850","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_56","okind":"iri"}
+{"seq":6815,"epoch":1,"op":"-","s":"http://example.org/resource/Person_731","p":"http://example.org/ontology/name","o":"Person 731","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6816,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_47","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_118","okind":"iri"}
+{"seq":6817,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_47","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6818,"epoch":1,"op":"-","s":"http://example.org/resource/Person_99","p":"http://example.org/ontology/birthDate","o":"1953-06-13","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#date"}
+{"seq":6819,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_23","p":"http://example.org/ontology/almaMater","o":"http://example.org/resource/Org_33","okind":"iri"}
+{"seq":6820,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_23","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_14","okind":"iri"}
+{"seq":6821,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_23","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6822,"epoch":1,"op":"-","s":"http://example.org/resource/Film_27","p":"http://example.org/ontology/title","o":"Film 27","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6823,"epoch":1,"op":"-","s":"http://example.org/resource/Film_0","p":"http://example.org/ontology/director","o":"http://example.org/resource/Person_657","okind":"iri"}
+{"seq":6824,"epoch":1,"op":"+","s":"http://example.org/resource/Person_73","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_35","okind":"iri"}
+{"seq":6825,"epoch":1,"op":"-","s":"http://example.org/resource/Film_53","p":"http://example.org/ontology/director","o":"http://example.org/resource/Person_325","okind":"iri"}
+{"seq":6826,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_42","p":"http://example.org/ontology/almaMater","o":"http://example.org/resource/Org_86","okind":"iri"}
+{"seq":6827,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_42","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_118","okind":"iri"}
+{"seq":6828,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_42","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6829,"epoch":1,"op":"-","s":"http://example.org/resource/Org_52","p":"http://example.org/ontology/name","o":"Org 52","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#string"}
+{"seq":6830,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_31","p":"http://example.org/ontology/almaMater","o":"http://example.org/resource/Org_73","okind":"iri"}
+{"seq":6831,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_31","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_34","okind":"iri"}
+{"seq":6832,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_31","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6833,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_31","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6834,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_16","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_21","okind":"iri"}
+{"seq":6835,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_16","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6836,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_16","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6837,"epoch":1,"op":"-","s":"http://example.org/resource/Person_390","p":"http://example.org/ontology/birthDate","o":"1939-04-14","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#date"}
+{"seq":6838,"epoch":1,"op":"+","s":"http://example.org/resource/Person_390","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Scientist","okind":"iri"}
+{"seq":6839,"epoch":1,"op":"+","s":"http://example.org/resource/Person_8","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_110","okind":"iri"}
+{"seq":6840,"epoch":1,"op":"-","s":"http://example.org/resource/Person_651","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_7","okind":"iri"}
+{"seq":6841,"epoch":1,"op":"-","s":"http://example.org/resource/Person_288","p":"http://example.org/ontology/name","o":"Person 288","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6842,"epoch":1,"op":"+","s":"http://example.org/resource/Person_288","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_7","okind":"iri"}
+{"seq":6843,"epoch":1,"op":"-","s":"http://example.org/resource/Person_575","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_56","okind":"iri"}
+{"seq":6844,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_55","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_117","okind":"iri"}
+{"seq":6845,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_55","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6846,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_55","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6847,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_15","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_19","okind":"iri"}
+{"seq":6848,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_15","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6849,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_15","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6850,"epoch":1,"op":"+","s":"http://example.org/resource/Person_197","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_30","okind":"iri"}
+{"seq":6851,"epoch":1,"op":"-","s":"http://example.org/resource/Person_537","p":"http://example.org/ontology/name","o":"Person 537","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6852,"epoch":1,"op":"-","s":"http://example.org/resource/Person_389","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_72","okind":"iri"}
+{"seq":6853,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_11","p":"http://example.org/ontology/almaMater","o":"http://example.org/resource/Org_50","okind":"iri"}
+{"seq":6854,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_11","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_90","okind":"iri"}
+{"seq":6855,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_11","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6856,"epoch":1,"op":"+","s":"http://example.org/resource/Person_530","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_21","okind":"iri"}
+{"seq":6857,"epoch":1,"op":"-","s":"http://example.org/resource/Person_327","p":"http://example.org/ontology/birthDate","o":"1950-04-14","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#date"}
+{"seq":6858,"epoch":1,"op":"+","s":"http://example.org/resource/Person_327","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_118","okind":"iri"}
+{"seq":6859,"epoch":1,"op":"+","s":"http://example.org/resource/Person_13","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Scientist","okind":"iri"}
+{"seq":6860,"epoch":1,"op":"+","s":"http://example.org/resource/Person_809","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_100","okind":"iri"}
+{"seq":6861,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_6","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_120","okind":"iri"}
+{"seq":6862,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_6","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6863,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_33","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_24","okind":"iri"}
+{"seq":6864,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_33","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6865,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_33","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6866,"epoch":1,"op":"+","s":"http://example.org/resource/Person_668","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_102","okind":"iri"}
+{"seq":6867,"epoch":1,"op":"+","s":"http://example.org/resource/Person_146","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_84","okind":"iri"}
+{"seq":6868,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_26","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_143","okind":"iri"}
+{"seq":6869,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_26","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6870,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_26","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6871,"epoch":1,"op":"-","s":"http://example.org/resource/Person_349","p":"http://example.org/ontology/birthDate","o":"1975-02-12","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#date"}
+{"seq":6872,"epoch":1,"op":"+","s":"http://example.org/resource/Person_536","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_33","okind":"iri"}
+{"seq":6873,"epoch":1,"op":"-","s":"http://example.org/resource/Person_52","p":"http://example.org/ontology/name","o":"Person 52","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6874,"epoch":1,"op":"-","s":"http://example.org/resource/Person_868","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_49","okind":"iri"}
+{"seq":6875,"epoch":1,"op":"-","s":"http://example.org/resource/Film_3","p":"http://example.org/ontology/starring","o":"http://example.org/resource/Person_63","okind":"iri"}
+{"seq":6876,"epoch":1,"op":"-","s":"http://example.org/resource/Person_804","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_77","okind":"iri"}
+{"seq":6877,"epoch":1,"op":"-","s":"http://example.org/resource/Film_177","p":"http://example.org/ontology/starring","o":"http://example.org/resource/Person_607","okind":"iri"}
+{"seq":6878,"epoch":1,"op":"+","s":"http://example.org/resource/Person_642","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_106","okind":"iri"}
+{"seq":6879,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_16","p":"http://example.org/ontology/director","o":"http://example.org/resource/Person_281","okind":"iri"}
+{"seq":6880,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_16","p":"http://example.org/ontology/title","o":"New film","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6881,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_16","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Film","okind":"iri"}
+{"seq":6882,"epoch":1,"op":"+","s":"http://example.org/resource/Film_new1_16","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Work","okind":"iri"}
+{"seq":6883,"epoch":1,"op":"-","s":"http://example.org/resource/Person_82","p":"http://example.org/ontology/name","o":"Person 82","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6884,"epoch":1,"op":"-","s":"http://example.org/resource/Film_115","p":"http://example.org/ontology/starring","o":"http://example.org/resource/Person_512","okind":"iri"}
+{"seq":6885,"epoch":1,"op":"-","s":"http://example.org/resource/Person_887","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_140","okind":"iri"}
+{"seq":6886,"epoch":1,"op":"-","s":"http://example.org/resource/Person_785","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_58","okind":"iri"}
+{"seq":6887,"epoch":1,"op":"-","s":"http://example.org/resource/Person_717","p":"http://example.org/ontology/name","o":"Person 717","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6888,"epoch":1,"op":"-","s":"http://example.org/resource/Person_433","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_106","okind":"iri"}
+{"seq":6889,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_9","p":"http://example.org/ontology/almaMater","o":"http://example.org/resource/Org_67","okind":"iri"}
+{"seq":6890,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_9","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_130","okind":"iri"}
+{"seq":6891,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_9","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6892,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_9","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6893,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_14","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_28","okind":"iri"}
+{"seq":6894,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_14","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6895,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_14","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6896,"epoch":1,"op":"-","s":"http://example.org/resource/Person_261","p":"http://example.org/ontology/name","o":"Person 261","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6897,"epoch":1,"op":"-","s":"http://example.org/resource/Film_85","p":"http://example.org/ontology/starring","o":"http://example.org/resource/Person_857","okind":"iri"}
+{"seq":6898,"epoch":1,"op":"-","s":"http://example.org/resource/Person_694","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_105","okind":"iri"}
+{"seq":6899,"epoch":1,"op":"-","s":"http://example.org/resource/Person_557","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_86","okind":"iri"}
+{"seq":6900,"epoch":1,"op":"+","s":"http://example.org/resource/Person_76","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_97","okind":"iri"}
+{"seq":6901,"epoch":1,"op":"+","s":"http://example.org/resource/Person_776","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_36","okind":"iri"}
+{"seq":6902,"epoch":1,"op":"-","s":"http://example.org/resource/Org_24","p":"http://example.org/ontology/name","o":"Org 24","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#string"}
+{"seq":6903,"epoch":1,"op":"-","s":"http://example.org/resource/Org_44","p":"http://example.org/ontology/name","o":"Org 44","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#string"}
+{"seq":6904,"epoch":1,"op":"-","s":"http://example.org/resource/Org_46","p":"http://example.org/ontology/name","o":"Org 46","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#string"}
+{"seq":6905,"epoch":1,"op":"-","s":"http://example.org/resource/Film_157","p":"http://example.org/ontology/starring","o":"http://example.org/resource/Person_830","okind":"iri"}
+{"seq":6906,"epoch":1,"op":"+","s":"http://example.org/resource/Person_46","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Scientist","okind":"iri"}
+{"seq":6907,"epoch":1,"op":"-","s":"http://example.org/resource/Person_847","p":"http://example.org/ontology/birthDate","o":"1940-03-17","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#date"}
+{"seq":6908,"epoch":1,"op":"+","s":"http://example.org/resource/Person_314","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_89","okind":"iri"}
+{"seq":6909,"epoch":1,"op":"-","s":"http://example.org/resource/Person_577","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_133","okind":"iri"}
+{"seq":6910,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_53","p":"http://example.org/ontology/almaMater","o":"http://example.org/resource/Org_47","okind":"iri"}
+{"seq":6911,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_53","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_106","okind":"iri"}
+{"seq":6912,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_53","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6913,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_53","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6914,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_52","p":"http://example.org/ontology/almaMater","o":"http://example.org/resource/Org_79","okind":"iri"}
+{"seq":6915,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_52","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_86","okind":"iri"}
+{"seq":6916,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_52","p":"http://example.org/ontology/name","o":"New person","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6917,"epoch":1,"op":"+","s":"http://example.org/resource/Person_new1_52","p":"http://www.w3.org/1999/02/22-rdf-syntax-ns#type","o":"http://example.org/ontology/Person","okind":"iri"}
+{"seq":6918,"epoch":1,"op":"+","s":"http://example.org/resource/Person_843","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_86","okind":"iri"}
+{"seq":6919,"epoch":1,"op":"-","s":"http://example.org/resource/Org_78","p":"http://example.org/ontology/location","o":"http://example.org/resource/City_138","okind":"iri"}
+{"seq":6920,"epoch":1,"op":"-","s":"http://example.org/resource/Film_161","p":"http://example.org/ontology/starring","o":"http://example.org/resource/Person_337","okind":"iri"}
+{"seq":6921,"epoch":1,"op":"-","s":"http://example.org/resource/Film_161","p":"http://example.org/ontology/title","o":"Film 161","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6922,"epoch":1,"op":"+","s":"http://example.org/resource/Person_840","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_102","okind":"iri"}
+{"seq":6923,"epoch":1,"op":"-","s":"http://example.org/resource/Person_323","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_2","okind":"iri"}
+{"seq":6924,"epoch":1,"op":"-","s":"http://example.org/resource/Person_323","p":"http://example.org/ontology/name","o":"Person 323","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6925,"epoch":1,"op":"-","s":"http://example.org/resource/Film_198","p":"http://example.org/ontology/title","o":"Film 198","okind":"literal","dt":"http://www.w3.org/1999/02/22-rdf-syntax-ns#langString","lang":"en"}
+{"seq":6926,"epoch":1,"op":"+","s":"http://example.org/resource/Person_783","p":"http://example.org/ontology/employer","o":"http://example.org/resource/Org_48","okind":"iri"}
+{"seq":6927,"epoch":1,"op":"-","s":"http://example.org/resource/Person_230","p":"http://example.org/ontology/birthDate","o":"1916-06-19","okind":"literal","dt":"http://www.w3.org/2001/XMLSchema#date"}
+{"seq":6928,"epoch":1,"op":"-","s":"http://example.org/resource/Person_86","p":"http://example.org/ontology/birthPlace","o":"http://example.org/resource/City_24","okind":"iri"}

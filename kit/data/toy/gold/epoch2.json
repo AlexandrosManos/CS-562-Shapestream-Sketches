@@ -1,0 +1,688 @@
+{
+ "meta": {
+  "team": "gold",
+  "variant": "batch-exact",
+  "epoch": 2,
+  "dataset": "toy"
+ },
+ "classes": [
+  {
+   "class": "http://example.org/ontology/City",
+   "count": 150
+  },
+  {
+   "class": "http://example.org/ontology/Company",
+   "count": 89
+  },
+  {
+   "class": "http://example.org/ontology/Country",
+   "count": 20
+  },
+  {
+   "class": "http://example.org/ontology/Film",
+   "count": 240
+  },
+  {
+   "class": "http://example.org/ontology/Organisation",
+   "count": 120
+  },
+  {
+   "class": "http://example.org/ontology/Person",
+   "count": 911
+  },
+  {
+   "class": "http://example.org/ontology/Place",
+   "count": 170
+  },
+  {
+   "class": "http://example.org/ontology/Scientist",
+   "count": 255
+  },
+  {
+   "class": "http://example.org/ontology/University",
+   "count": 31
+  },
+  {
+   "class": "http://example.org/ontology/Work",
+   "count": 240
+  },
+  {
+   "class": "urn:shapestream:Untyped",
+   "count": 109
+  }
+ ],
+ "properties": [
+  {
+   "class": "http://example.org/ontology/City",
+   "path": "http://example.org/ontology/country",
+   "support": 140,
+   "min_count": 0,
+   "max_count": 1
+  },
+  {
+   "class": "http://example.org/ontology/City",
+   "path": "http://example.org/ontology/name",
+   "support": 140,
+   "min_count": 0,
+   "max_count": 1
+  },
+  {
+   "class": "http://example.org/ontology/City",
+   "path": "http://example.org/ontology/population",
+   "support": 107,
+   "min_count": 0,
+   "max_count": 1
+  },
+  {
+   "class": "http://example.org/ontology/Company",
+   "path": "http://example.org/ontology/location",
+   "support": 85,
+   "min_count": 0,
+   "max_count": 1
+  },
+  {
+   "class": "http://example.org/ontology/Company",
+   "path": "http://example.org/ontology/name",
+   "support": 82,
+   "min_count": 0,
+   "max_count": 1
+  },
+  {
+   "class": "http://example.org/ontology/Country",
+   "path": "http://example.org/ontology/name",
+   "support": 19,
+   "min_count": 0,
+   "max_count": 1
+  },
+  {
+   "class": "http://example.org/ontology/Film",
+   "path": "http://example.org/ontology/director",
+   "support": 223,
+   "min_count": 0,
+   "max_count": 1
+  },
+  {
+   "class": "http://example.org/ontology/Film",
+   "path": "http://example.org/ontology/runtime",
+   "support": 101,
+   "min_count": 0,
+   "max_count": 1
+  },
+  {
+   "class": "http://example.org/ontology/Film",
+   "path": "http://example.org/ontology/starring",
+   "support": 192,
+   "min_count": 0,
+   "max_count": 4
+  },
+  {
+   "class": "http://example.org/ontology/Film",
+   "path": "http://example.org/ontology/title",
+   "support": 220,
+   "min_count": 0,
+   "max_count": 1
+  },
+  {
+   "class": "http://example.org/ontology/Organisation",
+   "path": "http://example.org/ontology/location",
+   "support": 114,
+   "min_count": 0,
+   "max_count": 1
+  },
+  {
+   "class": "http://example.org/ontology/Organisation",
+   "path": "http://example.org/ontology/name",
+   "support": 107,
+   "min_count": 0,
+   "max_count": 1
+  },
+  {
+   "class": "http://example.org/ontology/Person",
+   "path": "http://example.org/ontology/almaMater",
+   "support": 57,
+   "min_count": 0,
+   "max_count": 1
+  },
+  {
+   "class": "http://example.org/ontology/Person",
+   "path": "http://example.org/ontology/birthDate",
+   "support": 548,
+   "min_count": 0,
+   "max_count": 1
+  },
+  {
+   "class": "http://example.org/ontology/Person",
+   "path": "http://example.org/ontology/birthPlace",
+   "support": 840,
+   "min_count": 0,
+   "max_count": 1
+  },
+  {
+   "class": "http://example.org/ontology/Person",
+   "path": "http://example.org/ontology/employer",
+   "support": 603,
+   "min_count": 0,
+   "max_count": 4
+  },
+  {
+   "class": "http://example.org/ontology/Person",
+   "path": "http://example.org/ontology/name",
+   "support": 841,
+   "min_count": 0,
+   "max_count": 1
+  },
+  {
+   "class": "http://example.org/ontology/Place",
+   "path": "http://example.org/ontology/country",
+   "support": 140,
+   "min_count": 0,
+   "max_count": 1
+  },
+  {
+   "class": "http://example.org/ontology/Place",
+   "path": "http://example.org/ontology/name",
+   "support": 159,
+   "min_count": 0,
+   "max_count": 1
+  },
+  {
+   "class": "http://example.org/ontology/Place",
+   "path": "http://example.org/ontology/population",
+   "support": 107,
+   "min_count": 0,
+   "max_count": 1
+  },
+  {
+   "class": "http://example.org/ontology/Scientist",
+   "path": "http://example.org/ontology/almaMater",
+   "support": 2,
+   "min_count": 0,
+   "max_count": 1
+  },
+  {
+   "class": "http://example.org/ontology/Scientist",
+   "path": "http://example.org/ontology/birthDate",
+   "support": 177,
+   "min_count": 0,
+   "max_count": 1
+  },
+  {
+   "class": "http://example.org/ontology/Scientist",
+   "path": "http://example.org/ontology/birthPlace",
+   "support": 231,
+   "min_count": 0,
+   "max_count": 1
+  },
+  {
+   "class": "http://example.org/ontology/Scientist",
+   "path": "http://example.org/ontology/employer",
+   "support": 185,
+   "min_count": 0,
+   "max_count": 4
+  },
+  {
+   "class": "http://example.org/ontology/Scientist",
+   "path": "http://example.org/ontology/name",
+   "support": 230,
+   "min_count": 0,
+   "max_count": 1
+  },
+  {
+   "class": "http://example.org/ontology/University",
+   "path": "http://example.org/ontology/location",
+   "support": 29,
+   "min_count": 0,
+   "max_count": 1
+  },
+  {
+   "class": "http://example.org/ontology/University",
+   "path": "http://example.org/ontology/name",
+   "support": 25,
+   "min_count": 0,
+   "max_count": 1
+  },
+  {
+   "class": "http://example.org/ontology/Work",
+   "path": "http://example.org/ontology/director",
+   "support": 223,
+   "min_count": 0,
+   "max_count": 1
+  },
+  {
+   "class": "http://example.org/ontology/Work",
+   "path": "http://example.org/ontology/runtime",
+   "support": 101,
+   "min_count": 0,
+   "max_count": 1
+  },
+  {
+   "class": "http://example.org/ontology/Work",
+   "path": "http://example.org/ontology/starring",
+   "support": 192,
+   "min_count": 0,
+   "max_count": 4
+  },
+  {
+   "class": "http://example.org/ontology/Work",
+   "path": "http://example.org/ontology/title",
+   "support": 220,
+   "min_count": 0,
+   "max_count": 1
+  },
+  {
+   "class": "urn:shapestream:Untyped",
+   "path": "http://example.org/ontology/almaMater",
+   "support": 11,
+   "min_count": 0,
+   "max_count": 1
+  },
+  {
+   "class": "urn:shapestream:Untyped",
+   "path": "http://example.org/ontology/birthDate",
+   "support": 57,
+   "min_count": 0,
+   "max_count": 1
+  },
+  {
+   "class": "urn:shapestream:Untyped",
+   "path": "http://example.org/ontology/birthPlace",
+   "support": 103,
+   "min_count": 0,
+   "max_count": 1
+  },
+  {
+   "class": "urn:shapestream:Untyped",
+   "path": "http://example.org/ontology/employer",
+   "support": 68,
+   "min_count": 0,
+   "max_count": 2
+  },
+  {
+   "class": "urn:shapestream:Untyped",
+   "path": "http://example.org/ontology/name",
+   "support": 98,
+   "min_count": 0,
+   "max_count": 1
+  }
+ ],
+ "constraints": [
+  {
+   "class": "http://example.org/ontology/City",
+   "path": "http://example.org/ontology/country",
+   "type": "http://example.org/ontology/Country",
+   "support": 140
+  },
+  {
+   "class": "http://example.org/ontology/City",
+   "path": "http://example.org/ontology/country",
+   "type": "http://example.org/ontology/Place",
+   "support": 140
+  },
+  {
+   "class": "http://example.org/ontology/City",
+   "path": "http://example.org/ontology/name",
+   "type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+   "support": 140
+  },
+  {
+   "class": "http://example.org/ontology/City",
+   "path": "http://example.org/ontology/population",
+   "type": "http://www.w3.org/2001/XMLSchema#integer",
+   "support": 107
+  },
+  {
+   "class": "http://example.org/ontology/Company",
+   "path": "http://example.org/ontology/location",
+   "type": "http://example.org/ontology/City",
+   "support": 85
+  },
+  {
+   "class": "http://example.org/ontology/Company",
+   "path": "http://example.org/ontology/location",
+   "type": "http://example.org/ontology/Place",
+   "support": 85
+  },
+  {
+   "class": "http://example.org/ontology/Company",
+   "path": "http://example.org/ontology/name",
+   "type": "http://www.w3.org/2001/XMLSchema#string",
+   "support": 82
+  },
+  {
+   "class": "http://example.org/ontology/Country",
+   "path": "http://example.org/ontology/name",
+   "type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+   "support": 19
+  },
+  {
+   "class": "http://example.org/ontology/Film",
+   "path": "http://example.org/ontology/director",
+   "type": "http://example.org/ontology/Person",
+   "support": 206
+  },
+  {
+   "class": "http://example.org/ontology/Film",
+   "path": "http://example.org/ontology/director",
+   "type": "http://example.org/ontology/Scientist",
+   "support": 64
+  },
+  {
+   "class": "http://example.org/ontology/Film",
+   "path": "http://example.org/ontology/director",
+   "type": "urn:shapestream:IRI",
+   "support": 17
+  },
+  {
+   "class": "http://example.org/ontology/Film",
+   "path": "http://example.org/ontology/runtime",
+   "type": "http://www.w3.org/2001/XMLSchema#double",
+   "support": 101
+  },
+  {
+   "class": "http://example.org/ontology/Film",
+   "path": "http://example.org/ontology/starring",
+   "type": "http://example.org/ontology/Person",
+   "support": 188
+  },
+  {
+   "class": "http://example.org/ontology/Film",
+   "path": "http://example.org/ontology/starring",
+   "type": "http://example.org/ontology/Scientist",
+   "support": 104
+  },
+  {
+   "class": "http://example.org/ontology/Film",
+   "path": "http://example.org/ontology/starring",
+   "type": "urn:shapestream:IRI",
+   "support": 30
+  },
+  {
+   "class": "http://example.org/ontology/Film",
+   "path": "http://example.org/ontology/title",
+   "type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+   "support": 220
+  },
+  {
+   "class": "http://example.org/ontology/Organisation",
+   "path": "http://example.org/ontology/location",
+   "type": "http://example.org/ontology/City",
+   "support": 114
+  },
+  {
+   "class": "http://example.org/ontology/Organisation",
+   "path": "http://example.org/ontology/location",
+   "type": "http://example.org/ontology/Place",
+   "support": 114
+  },
+  {
+   "class": "http://example.org/ontology/Organisation",
+   "path": "http://example.org/ontology/name",
+   "type": "http://www.w3.org/2001/XMLSchema#string",
+   "support": 107
+  },
+  {
+   "class": "http://example.org/ontology/Person",
+   "path": "http://example.org/ontology/almaMater",
+   "type": "http://example.org/ontology/Company",
+   "support": 41
+  },
+  {
+   "class": "http://example.org/ontology/Person",
+   "path": "http://example.org/ontology/almaMater",
+   "type": "http://example.org/ontology/Organisation",
+   "support": 57
+  },
+  {
+   "class": "http://example.org/ontology/Person",
+   "path": "http://example.org/ontology/almaMater",
+   "type": "http://example.org/ontology/University",
+   "support": 16
+  },
+  {
+   "class": "http://example.org/ontology/Person",
+   "path": "http://example.org/ontology/birthDate",
+   "type": "http://www.w3.org/2001/XMLSchema#date",
+   "support": 548
+  },
+  {
+   "class": "http://example.org/ontology/Person",
+   "path": "http://example.org/ontology/birthPlace",
+   "type": "http://example.org/ontology/City",
+   "support": 840
+  },
+  {
+   "class": "http://example.org/ontology/Person",
+   "path": "http://example.org/ontology/birthPlace",
+   "type": "http://example.org/ontology/Place",
+   "support": 840
+  },
+  {
+   "class": "http://example.org/ontology/Person",
+   "path": "http://example.org/ontology/employer",
+   "type": "http://example.org/ontology/Company",
+   "support": 492
+  },
+  {
+   "class": "http://example.org/ontology/Person",
+   "path": "http://example.org/ontology/employer",
+   "type": "http://example.org/ontology/Organisation",
+   "support": 603
+  },
+  {
+   "class": "http://example.org/ontology/Person",
+   "path": "http://example.org/ontology/employer",
+   "type": "http://example.org/ontology/University",
+   "support": 200
+  },
+  {
+   "class": "http://example.org/ontology/Person",
+   "path": "http://example.org/ontology/name",
+   "type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+   "support": 841
+  },
+  {
+   "class": "http://example.org/ontology/Place",
+   "path": "http://example.org/ontology/country",
+   "type": "http://example.org/ontology/Country",
+   "support": 140
+  },
+  {
+   "class": "http://example.org/ontology/Place",
+   "path": "http://example.org/ontology/country",
+   "type": "http://example.org/ontology/Place",
+   "support": 140
+  },
+  {
+   "class": "http://example.org/ontology/Place",
+   "path": "http://example.org/ontology/name",
+   "type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+   "support": 159
+  },
+  {
+   "class": "http://example.org/ontology/Place",
+   "path": "http://example.org/ontology/population",
+   "type": "http://www.w3.org/2001/XMLSchema#integer",
+   "support": 107
+  },
+  {
+   "class": "http://example.org/ontology/Scientist",
+   "path": "http://example.org/ontology/almaMater",
+   "type": "http://example.org/ontology/Company",
+   "support": 2
+  },
+  {
+   "class": "http://example.org/ontology/Scientist",
+   "path": "http://example.org/ontology/almaMater",
+   "type": "http://example.org/ontology/Organisation",
+   "support": 2
+  },
+  {
+   "class": "http://example.org/ontology/Scientist",
+   "path": "http://example.org/ontology/birthDate",
+   "type": "http://www.w3.org/2001/XMLSchema#date",
+   "support": 177
+  },
+  {
+   "class": "http://example.org/ontology/Scientist",
+   "path": "http://example.org/ontology/birthPlace",
+   "type": "http://example.org/ontology/City",
+   "support": 231
+  },
+  {
+   "class": "http://example.org/ontology/Scientist",
+   "path": "http://example.org/ontology/birthPlace",
+   "type": "http://example.org/ontology/Place",
+   "support": 231
+  },
+  {
+   "class": "http://example.org/ontology/Scientist",
+   "path": "http://example.org/ontology/employer",
+   "type": "http://example.org/ontology/Company",
+   "support": 157
+  },
+  {
+   "class": "http://example.org/ontology/Scientist",
+   "path": "http://example.org/ontology/employer",
+   "type": "http://example.org/ontology/Organisation",
+   "support": 185
+  },
+  {
+   "class": "http://example.org/ontology/Scientist",
+   "path": "http://example.org/ontology/employer",
+   "type": "http://example.org/ontology/University",
+   "support": 50
+  },
+  {
+   "class": "http://example.org/ontology/Scientist",
+   "path": "http://example.org/ontology/name",
+   "type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+   "support": 230
+  },
+  {
+   "class": "http://example.org/ontology/University",
+   "path": "http://example.org/ontology/location",
+   "type": "http://example.org/ontology/City",
+   "support": 29
+  },
+  {
+   "class": "http://example.org/ontology/University",
+   "path": "http://example.org/ontology/location",
+   "type": "http://example.org/ontology/Place",
+   "support": 29
+  },
+  {
+   "class": "http://example.org/ontology/University",
+   "path": "http://example.org/ontology/name",
+   "type": "http://www.w3.org/2001/XMLSchema#string",
+   "support": 25
+  },
+  {
+   "class": "http://example.org/ontology/Work",
+   "path": "http://example.org/ontology/director",
+   "type": "http://example.org/ontology/Person",
+   "support": 206
+  },
+  {
+   "class": "http://example.org/ontology/Work",
+   "path": "http://example.org/ontology/director",
+   "type": "http://example.org/ontology/Scientist",
+   "support": 64
+  },
+  {
+   "class": "http://example.org/ontology/Work",
+   "path": "http://example.org/ontology/director",
+   "type": "urn:shapestream:IRI",
+   "support": 17
+  },
+  {
+   "class": "http://example.org/ontology/Work",
+   "path": "http://example.org/ontology/runtime",
+   "type": "http://www.w3.org/2001/XMLSchema#double",
+   "support": 101
+  },
+  {
+   "class": "http://example.org/ontology/Work",
+   "path": "http://example.org/ontology/starring",
+   "type": "http://example.org/ontology/Person",
+   "support": 188
+  },
+  {
+   "class": "http://example.org/ontology/Work",
+   "path": "http://example.org/ontology/starring",
+   "type": "http://example.org/ontology/Scientist",
+   "support": 104
+  },
+  {
+   "class": "http://example.org/ontology/Work",
+   "path": "http://example.org/ontology/starring",
+   "type": "urn:shapestream:IRI",
+   "support": 30
+  },
+  {
+   "class": "http://example.org/ontology/Work",
+   "path": "http://example.org/ontology/title",
+   "type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+   "support": 220
+  },
+  {
+   "class": "urn:shapestream:Untyped",
+   "path": "http://example.org/ontology/almaMater",
+   "type": "http://example.org/ontology/Company",
+   "support": 9
+  },
+  {
+   "class": "urn:shapestream:Untyped",
+   "path": "http://example.org/ontology/almaMater",
+   "type": "http://example.org/ontology/Organisation",
+   "support": 11
+  },
+  {
+   "class": "urn:shapestream:Untyped",
+   "path": "http://example.org/ontology/almaMater",
+   "type": "http://example.org/ontology/University",
+   "support": 2
+  },
+  {
+   "class": "urn:shapestream:Untyped",
+   "path": "http://example.org/ontology/birthDate",
+   "type": "http://www.w3.org/2001/XMLSchema#date",
+   "support": 57
+  },
+  {
+   "class": "urn:shapestream:Untyped",
+   "path": "http://example.org/ontology/birthPlace",
+   "type": "http://example.org/ontology/City",
+   "support": 103
+  },
+  {
+   "class": "urn:shapestream:Untyped",
+   "path": "http://example.org/ontology/birthPlace",
+   "type": "http://example.org/ontology/Place",
+   "support": 103
+  },
+  {
+   "class": "urn:shapestream:Untyped",
+   "path": "http://example.org/ontology/employer",
+   "type": "http://example.org/ontology/Company",
+   "support": 55
+  },
+  {
+   "class": "urn:shapestream:Untyped",
+   "path": "http://example.org/ontology/employer",
+   "type": "http://example.org/ontology/Organisation",
+   "support": 68
+  },
+  {
+   "class": "urn:shapestream:Untyped",
+   "path": "http://example.org/ontology/employer",
+   "type": "http://example.org/ontology/University",
+   "support": 26
+  },
+  {
+   "class": "urn:shapestream:Untyped",
+   "path": "http://example.org/ontology/name",
+   "type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+   "support": 98
+  }
+ ]
+}

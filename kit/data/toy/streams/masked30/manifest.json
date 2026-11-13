@@ -1,0 +1,30 @@
+{
+ "name": "masked30",
+ "mask_types": 0.3,
+ "epochs": [
+  {
+   "epoch": 0,
+   "events": 6382,
+   "deletions": 0,
+   "insertions": 6382,
+   "first_seq": 0,
+   "last_seq": 6381
+  },
+  {
+   "epoch": 1,
+   "events": 547,
+   "deletions": 199,
+   "insertions": 348,
+   "first_seq": 6382,
+   "last_seq": 6928
+  },
+  {
+   "epoch": 2,
+   "events": 563,
+   "deletions": 202,
+   "insertions": 361,
+   "first_seq": 6929,
+   "last_seq": 7491
+  }
+ ]
+}

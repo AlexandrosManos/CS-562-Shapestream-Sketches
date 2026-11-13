@@ -1,0 +1,20 @@
+{
+ "sample": 1.0,
+ "snapshots": {
+  "0": {
+   "inputs": "data/toy/raw/s0.nt",
+   "triples": 6972,
+   "malformed_lines": 0
+  },
+  "1": {
+   "inputs": "data/toy/raw/s1.nt",
+   "triples": 7163,
+   "malformed_lines": 0
+  },
+  "2": {
+   "inputs": "data/toy/raw/s2.nt",
+   "triples": 7356,
+   "malformed_lines": 0
+  }
+ }
+}
