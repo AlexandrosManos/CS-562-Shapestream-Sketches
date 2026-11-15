@@ -1,0 +1,13 @@
+python 3.12.15 on Linux-7.2.12-orbstack-00394-gbecdd6130068-aarch64-with-glibc2.36
+[OK ] pyspark: 4.2.0
+[OK ] Spark session: cores=10
+[OK ] Kafka reachable: kafka:9092
+[OK ] data/toy: snapshots
+[OK ] data/toy: stream 'full': epoch 0: 6972 events, epoch 1: 589 events, epoch 2: 597 events
+[OK ] data/toy: stream 'masked30'
+[OK ] data/toy: gold: 3 files
+[OK ] data/dbpedia: snapshots
+[OK ] data/dbpedia: stream 'full': epoch 0: 2794020 events, epoch 1: 265238 events, epoch 2: 377187 events
+[OK ] data/dbpedia: stream 'masked30'
+[OK ] data/dbpedia: gold: 3 files
+ALL CHECKS PASSED
