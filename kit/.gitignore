@@ -8,6 +8,11 @@ __pycache__/
 data/*/raw/*.bz2
 data/*/raw/*.gz
 data/dbpedia*/
+data/dblp/*
+!data/dblp/raw/
+data/dblp/raw/*
+!data/dblp/raw/MANIFEST.tsv
+data/dblp?*
 data/kg/
 spark-warehouse/
 
