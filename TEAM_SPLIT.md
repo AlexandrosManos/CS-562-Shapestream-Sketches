@@ -2,7 +2,7 @@
 
 To avoid merge conflicts in a single notebook and ensure every team member has a clean, modular Git commit history (graded per Section 8), we split our implementation into **5 independent modules** under our own package (e.g., `kit/engine/`, leaving `kit/shapestream/` untouched).
 
-All 5 members can develop and test immediately on **`kit/data/toy`** and run full experiments on **`kit/data/dbpedia` (5% sample)**.
+All 5 members can develop and test immediately on **`kit/data/toy`** and run full experiments on **`kit/data/dblp` (1% sample)**.
 
 ---
 
@@ -64,7 +64,7 @@ All 5 members can develop and test immediately on **`kit/data/toy`** and run ful
 - **Owned files:** `kit/tests/test_hard_cases.py`, `kit/scripts_team/benchmark_batch.py`, `kit/scripts_team/plots.py`, `report.tex` (figures/tables)
 - **Checkpoint 1 (Exact):**
   - Build synthetic & `toy` KG unit tests targeting the 3 hard cases: (1) deletions lowering `max_count` or removing the last property value, (2) subject `rdf:type` changes (`Untyped` $\leftrightarrow C$), and (3) object `rdf:type` changes (`IRI` $\leftrightarrow$ class).
-  - Verify `F1 = 1.0` and `support_mape = 0.0` on `toy` & `dbpedia`, and measure batch re-extraction latency (`gold_shapes.py`) per epoch as the non-incremental baseline.
+  - Verify `F1 = 1.0` and `support_mape = 0.0` on `toy` & `dblp`, and measure batch re-extraction latency (`gold_shapes.py`) per epoch as the non-incremental baseline.
 - **Checkpoint 2 & Final (Variant A1):**
   - Process `results/results_A.csv` (computing 3-run means/std), quantify how estimation error grows with deletions across epochs, and generate the **3 required publication-ready plots** (Section 5) for `report.tex`:
     1. `F1` at $\sigma = 10, \tau = 0.1$ per epoch,
