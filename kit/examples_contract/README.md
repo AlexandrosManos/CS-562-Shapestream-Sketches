@@ -12,8 +12,12 @@ Concrete mock inputs and expected outputs across **Epochs 0, 1, and 2** covering
 ## Critical Contract Rules
 
 1. **Definition of `touched_subjects` (`spark_state.py` — Member 2):**
-   For every micro-batch, `touched_subjects` MUST equal:
-   $$\text{touched\_subjects} = \{s \text{ appearing in } \text{batch\_df}\} \;\cup\; \{s \mid (s, p, o) \text{ is active in } \text{data\_triples} \land o \text{ gained or lost an } \text{rdf:type} \text{ in } \text{batch\_df}\}$$
+   For every micro-batch, `touched_subjects` MUST equal the union of:
+   ```text
+   touched_subjects =
+       { s appearing in batch_df }
+     ∪ { s | (s, p, o) is active in data_triples AND o gained/lost an rdf:type in batch_df }
+   ```
    Maintain a reverse lookup (`o -> s` on IRI objects in `data_triples`) so Hard Case 3 runs without scanning untouched literals/subjects.
 
 2. **Epoch boundaries & Kafka micro-batches (`streaming_runner.py` — Member 1):**
