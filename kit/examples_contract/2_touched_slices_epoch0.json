@@ -1,0 +1,28 @@
+{
+ "epoch": 0,
+ "touched_subjects": [
+  "http://example.org/paper0",
+  "http://example.org/paper1",
+  "http://example.org/s2"
+ ],
+ "before_slice": {
+  "types_df": [],
+  "data_df": [],
+  "obj_types_df": []
+ },
+ "after_slice": {
+  "types_df": [
+   {"s": "http://example.org/paper0", "cls": "http://example.org/Article"},
+   {"s": "http://example.org/paper1", "cls": "http://example.org/Article"}
+  ],
+  "data_df": [
+   {"s": "http://example.org/paper0", "p": "http://example.org/author", "o": "Carol", "okind": "literal", "dt": "http://www.w3.org/2001/XMLSchema#string", "lang": null},
+   {"s": "http://example.org/paper0", "p": "http://example.org/venue", "o": "http://example.org/v0", "okind": "iri", "dt": null, "lang": null},
+   {"s": "http://example.org/paper1", "p": "http://example.org/author", "o": "Alice", "okind": "literal", "dt": "http://www.w3.org/2001/XMLSchema#string", "lang": null},
+   {"s": "http://example.org/paper1", "p": "http://example.org/author", "o": "Bob", "okind": "literal", "dt": "http://www.w3.org/2001/XMLSchema#string", "lang": null},
+   {"s": "http://example.org/paper1", "p": "http://example.org/venue", "o": "http://example.org/v1", "okind": "iri", "dt": null, "lang": null},
+   {"s": "http://example.org/s2", "p": "http://example.org/title", "o": "Draft", "okind": "literal", "dt": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString", "lang": "en"}
+  ],
+  "obj_types_df": []
+ }
+}
