@@ -38,5 +38,5 @@ Concrete mock inputs and expected outputs across **Epochs 0, 1, and 2** covering
 
 Each `TouchedSlice` holds 3 Spark DataFrames restricted **only** to `touched_subjects`:
 1. `types_df`: `(s: string, cls: string)` — active `rdf:type` IRIs of touched subjects (omit untyped subjects; `exact_agg.py` assigns `urn:shapestream:Untyped`).
-2. `data_df`: `(s: string, p: string, o: string, okind: string, dt: string)` — active non-`rdf:type` triples of touched subjects.
+2. `data_df`: `(s: string, p: string, o: string, okind: string, dt: string, lang: string)` — active non-`rdf:type` triples of touched subjects (matches `shapestream.spark_io.TRIPLE_SCHEMA`; keep `null` in `dt`/`lang` when absent and use null-safe equality `eqNullSafe` / `<=>` when joining on triple identity).
 3. `obj_types_df`: `(o: string, cls: string)` — active `rdf:type` IRIs of IRI objects referenced by `data_df` (omit untyped IRI objects; `exact_agg.py` assigns `urn:shapestream:IRI`).

@@ -14,13 +14,15 @@ try:
         T.StructField("cls", T.StringType(), nullable=False),
     ])
 
-    # Active non-type triples for touched subjects: (s, p, o, okind, dt)
+    # Active non-type triples for touched subjects: matches shapestream.spark_io.TRIPLE_SCHEMA
+    # Note: dt and lang are nullable; use eqNullSafe (<=>) when joining on triple identity.
     DATA_SCHEMA = T.StructType([
         T.StructField("s", T.StringType(), nullable=False),
         T.StructField("p", T.StringType(), nullable=False),
         T.StructField("o", T.StringType(), nullable=False),
         T.StructField("okind", T.StringType(), nullable=False),
         T.StructField("dt", T.StringType(), nullable=True),
+        T.StructField("lang", T.StringType(), nullable=True),
     ])
 
     # Active rdf:type pairs for IRI objects referenced in DATA_SCHEMA: (o, cls)
