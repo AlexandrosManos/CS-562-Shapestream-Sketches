@@ -24,6 +24,9 @@ Concrete mock inputs and expected outputs across **Epochs 0, 1, and 2** covering
    - With `file` source (`availableNow=True` per `epoch=k` folder), call `engine.process_batch(batch_df, id)` for each micro-batch, then `engine.on_epoch_end(k)` and `engine.current_stats()`.
    - With `kafka` source (`replay_to_kafka.py --rate 0`), a single `foreachBatch` micro-batch may span the end of epoch `k`, `{"op": "checkpoint", "epoch": k}` markers, and the start of epoch `k+1`. `streaming_runner.py` MUST split by `epoch` in ascending order: process `op in {'+', '-'}` rows for epoch `k`, and as soon as `checkpoint` for `k` has been seen across **all** Kafka partitions, call `engine.on_epoch_end(k)` and `engine.current_stats()` **before** feeding epoch `k+1` rows into `process_batch`.
 
+3. **Lazy Spark DataFrames & `before_slice` safety (`spark_state.py` & `exact_engine.py` — Members 2 & 4):**
+   - `ExactAggregator.update(before_slice, after_slice)` evaluates both slices lazily when called. `spark_state.py` MUST NOT return a lazy `before_slice` pointing at Parquet/state files that have already been overwritten in-place by the new batch (otherwise `before_slice` would read the post-batch state or fail with missing files). Either write updated state to a new batch directory before swapping/cleaning up the old directory *after* `agg.update()`, or materialize (`cache` + action / `localCheckpoint`) `before_slice` before overwriting on-disk state.
+
 ## Which file is your Input / Output?
 
 | Member | Module | Input | Expected Output |
