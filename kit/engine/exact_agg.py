@@ -7,26 +7,19 @@ import sys
 from dataclasses import dataclass, field
 from typing import Dict, Optional, Tuple
 
-try:
-    from .contracts import (
-        DATA_SCHEMA,
-        OBJ_TYPES_SCHEMA,
-        TYPES_SCHEMA,
-        ClassesDict,
-        ConstraintsDict,
-        StatsTuple,
-        TouchedSlice,
-    )
-except ImportError:
-    from contracts import (
-        DATA_SCHEMA,
-        OBJ_TYPES_SCHEMA,
-        TYPES_SCHEMA,
-        ClassesDict,
-        ConstraintsDict,
-        StatsTuple,
-        TouchedSlice,
-    )
+_KIT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if _KIT_DIR not in sys.path:
+    sys.path.insert(0, _KIT_DIR)
+
+from engine.contracts import (
+    DATA_SCHEMA,
+    OBJ_TYPES_SCHEMA,
+    TYPES_SCHEMA,
+    ClassesDict,
+    ConstraintsDict,
+    StatsTuple,
+    TouchedSlice,
+)
 
 
 @dataclass
@@ -54,23 +47,34 @@ class ExactAggregator:
         before_slice: Optional[TouchedSlice],
         after_slice: Optional[TouchedSlice],
     ) -> None:
-        """Subtract before_slice counts and add after_slice counts for touched subjects."""
-        if before_slice is not None:
-            summary_before = self._summarize_slice(before_slice)
+        """Atomically subtract before_slice counts and add after_slice counts."""
+        summary_before = self._summarize_slice(before_slice) if before_slice is not None else None
+        summary_after = self._summarize_slice(after_slice) if after_slice is not None else None
+
+        if summary_before is not None:
+            self._validate_subtraction(summary_before)
             self._apply_counts(summary_before, -1)
 
-        if after_slice is not None:
-            summary_after = self._summarize_slice(after_slice)
+        if summary_after is not None:
             self._apply_counts(summary_after, +1)
 
+    def _validate_subtraction(self, counts: SliceCounts) -> None:
+        """Ensure subtracting `counts` will not make any existing entry negative."""
+        for key, value in counts.classes.items():
+            if self.classes.get(key, 0) < value:
+                raise ValueError(f"Negative count for class: {key}")
+        for key, value in counts.prop_hists.items():
+            hist = self.prop_hists.get(key, {})
+            for k_values, entity_count in value.items():
+                if hist.get(k_values, 0) < entity_count:
+                    raise ValueError(f"Negative count for property {key} values {k_values}")
+        for key, value in counts.constraints.items():
+            if self.constraints.get(key, 0) < value:
+                raise ValueError(f"Negative count for constraint: {key}")
 
     def _summarize_slice(self, slice_data: TouchedSlice) -> SliceCounts:
         """Aggregate a TouchedSlice in Spark into compact SliceCounts (handles Untyped & IRI)."""
-        # Add them inside the function in order to run the other functions locally
-        kit_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        if kit_dir not in sys.path:
-            sys.path.insert(0, kit_dir)
-
+        # Imported lazily so Spark-free unit checks work locally without PySpark
         from pyspark.sql import functions as F
         from shapestream.common import BNODE, IRI_ANY, UNTYPED, XSD_STRING
 
@@ -183,14 +187,10 @@ def run_contract_demo() -> None:
     """Run ExactAggregator on examples_contract slices (Epochs 0-2) and verify expected stats."""
     import json
 
-    kit_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    if kit_dir not in sys.path:
-        sys.path.insert(0, kit_dir)
-
     from shapestream.common import read_stats
     from shapestream.spark_io import get_spark
 
-    examples_dir = os.path.join(kit_dir, "examples_contract")
+    examples_dir = os.path.join(_KIT_DIR, "examples_contract")
     spark = get_spark("exact_agg_demo")
 
     def _to_slice(d: dict) -> TouchedSlice:
