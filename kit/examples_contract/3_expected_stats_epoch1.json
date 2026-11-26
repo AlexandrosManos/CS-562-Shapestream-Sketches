@@ -1,0 +1,67 @@
+{
+ "meta": {
+  "team": "A1",
+  "variant": "exact",
+  "epoch": 1,
+  "dataset": "mock"
+ },
+ "classes": [
+  {
+   "class": "http://example.org/Article",
+   "count": 3
+  },
+  {
+   "class": "http://example.org/Journal",
+   "count": 1
+  }
+ ],
+ "properties": [
+  {
+   "class": "http://example.org/Article",
+   "path": "http://example.org/author",
+   "support": 2,
+   "min_count": 0,
+   "max_count": 1
+  },
+  {
+   "class": "http://example.org/Article",
+   "path": "http://example.org/title",
+   "support": 1,
+   "min_count": 0,
+   "max_count": 1
+  },
+  {
+   "class": "http://example.org/Article",
+   "path": "http://example.org/venue",
+   "support": 2,
+   "min_count": 0,
+   "max_count": 1
+  }
+ ],
+ "constraints": [
+  {
+   "class": "http://example.org/Article",
+   "path": "http://example.org/author",
+   "type": "http://www.w3.org/2001/XMLSchema#string",
+   "support": 2
+  },
+  {
+   "class": "http://example.org/Article",
+   "path": "http://example.org/title",
+   "type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+   "support": 1
+  },
+  {
+   "class": "http://example.org/Article",
+   "path": "http://example.org/venue",
+   "type": "http://example.org/Journal",
+   "support": 1
+  },
+  {
+   "class": "http://example.org/Article",
+   "path": "http://example.org/venue",
+   "type": "urn:shapestream:IRI",
+   "support": 1
+  }
+ ]
+}

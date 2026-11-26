@@ -1,0 +1,8 @@
+{"seq": 0, "epoch": 0, "op": "+", "s": "http://example.org/paper0", "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", "o": "http://example.org/Article", "okind": "iri", "dt": null, "lang": null}
+{"seq": 1, "epoch": 0, "op": "+", "s": "http://example.org/paper0", "p": "http://example.org/author", "o": "Carol", "okind": "literal", "dt": "http://www.w3.org/2001/XMLSchema#string", "lang": null}
+{"seq": 2, "epoch": 0, "op": "+", "s": "http://example.org/paper0", "p": "http://example.org/venue", "o": "http://example.org/v0", "okind": "iri", "dt": null, "lang": null}
+{"seq": 3, "epoch": 0, "op": "+", "s": "http://example.org/paper1", "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", "o": "http://example.org/Article", "okind": "iri", "dt": null, "lang": null}
+{"seq": 4, "epoch": 0, "op": "+", "s": "http://example.org/paper1", "p": "http://example.org/author", "o": "Alice", "okind": "literal", "dt": "http://www.w3.org/2001/XMLSchema#string", "lang": null}
+{"seq": 5, "epoch": 0, "op": "+", "s": "http://example.org/paper1", "p": "http://example.org/author", "o": "Bob", "okind": "literal", "dt": "http://www.w3.org/2001/XMLSchema#string", "lang": null}
+{"seq": 6, "epoch": 0, "op": "+", "s": "http://example.org/paper1", "p": "http://example.org/venue", "o": "http://example.org/v1", "okind": "iri", "dt": null, "lang": null}
+{"seq": 7, "epoch": 0, "op": "+", "s": "http://example.org/s2", "p": "http://example.org/title", "o": "Draft", "okind": "literal", "dt": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString", "lang": "en"}

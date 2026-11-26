@@ -1,0 +1,1 @@
+{"seq": 11, "epoch": 2, "op": "+", "s": "http://example.org/v0", "p": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type", "o": "http://example.org/Conference", "okind": "iri", "dt": null, "lang": null}
