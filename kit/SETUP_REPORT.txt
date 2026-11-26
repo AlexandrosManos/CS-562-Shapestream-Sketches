@@ -1,6 +1,6 @@
-python 3.12.16 on Linux-7.0.0-38-generic-x86_64-with-glibc2.36
+python 3.12.15 on Linux-7.2.12-orbstack-00394-gbecdd6130068-aarch64-with-glibc2.36
 [OK ] pyspark: 4.2.0
-[OK ] Spark session: cores=8
+[OK ] Spark session: cores=10
 [OK ] Kafka reachable: kafka:9092
 [OK ] data/toy: snapshots
 [OK ] data/toy: stream 'full': epoch 0: 6972 events, epoch 1: 589 events, epoch 2: 597 events
