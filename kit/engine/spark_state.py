@@ -6,11 +6,13 @@ from pyspark.sql import functions as F
 from engine.contracts import TouchedSlice
 
 class SparkState:
-    def __init__(self, spark:SparkSession) -> None:
+    def __init__(self, spark:SparkSession, state_dir: str | None = None) -> None:
         if not isinstance(spark, SparkSession):
             raise TypeError("Expected valid instance of SparkSession")
         
         self.session = spark
+        self.state_dir = state_dir
+        self.state_version = 0
         
         # SCHEMAS
         self.entity_types_schema = StructType([
@@ -26,10 +28,20 @@ class SparkState:
                                         StructField("dt", StringType(), True),
                                         StructField("lang", StringType(), True),
         ])
+
+        self.reverse_refs_schema = StructType([
+                                        StructField("o", StringType(), False),
+                                        StructField("s", StringType(), False),
+                                        StructField("p", StringType(), False),
+                                        StructField("dt", StringType(), True),
+                                        StructField("lang", StringType(), True)
+        ])
+
         
         # empty dataframes from schemas
         self.entity_types = self.session.createDataFrame([], self.entity_types_schema)
         self.data_triples = self.session.createDataFrame([], self.data_triples_schema)
+        self.reverse_refs = self.session.createDataFrame([], self.reverse_refs_schema)
 
 
     def apply_batch(self, batch_df:DataFrame) -> tuple[TouchedSlice, TouchedSlice]:
@@ -44,8 +56,7 @@ class SparkState:
 
         # i have both direct and indirect changes on the graph after getting the info from the batch 
         direct_sub = latest_events.select("s").distinct()
-        indir_sub = self.data_triples.join(type_events, (self.data_triples["o"] == type_events["s"]) & 
-                                                        (self.data_triples["okind"] == "iri"), "inner").select(self.data_triples["s"]).distinct()
+        indir_sub = self.reverse_refs.join(type_events, self.reverse_refs["o"] == type_events["s"], how="inner").select(self.reverse_refs["s"]).distinct()
 
         touched = direct_sub.union(indir_sub).distinct()
 
@@ -69,6 +80,18 @@ class SparkState:
         triple_add = triple_events.filter(triple_events["op"] == "+").select(F.col("s"), F.col("p"), F.col("o"), F.col("okind"), F.col("dt"), F.col("lang"))
         triple_del = triple_events.filter(triple_events["op"] == "-").select(F.col("s"), F.col("p"), F.col("o"), F.col("okind"), F.col("dt"), F.col("lang"))
 
+        reverse_add = triple_add.filter(F.col("okind") == "iri").select("o", "s", "p", "dt", "lang")
+        reverse_del = triple_del.filter(F.col("okind") == "iri").select("o", "s", "p", "dt", "lang")
+        
+        self.reverse_refs = self.reverse_refs.join(reverse_del, (self.reverse_refs["o"] == reverse_del["o"]) &
+                                                                (self.reverse_refs["s"] == reverse_del["s"]) &
+                                                                (self.reverse_refs["p"] == reverse_del["p"]) &
+                                                                self.reverse_refs["dt"].eqNullSafe(reverse_del["dt"]) &
+                                                                self.reverse_refs["lang"].eqNullSafe(reverse_del["lang"]), how="left_anti")
+
+        self.reverse_refs = self.reverse_refs.unionByName(reverse_add).distinct()
+        
+        
         self.data_triples = self.data_triples.join(triple_del,    (self.data_triples["s"] == triple_del["s"]) & 
                                                                 (self.data_triples["p"] == triple_del["p"]) &
                                                                 (self.data_triples["o"] == triple_del["o"]) &
@@ -83,6 +106,19 @@ class SparkState:
         types_aft = touched.join(self.entity_types, on="s", how="inner")
         obj_types_aft = triples_aft.filter(triples_aft["okind"] == "iri").join(self.entity_types, triples_aft["o"] == self.entity_types["s"], how="inner").select(triples_aft["o"], self.entity_types["cls"]).distinct()
 
+        if self.state_dir is not None:
+            version_dir = f"{self.state_dir.rstrip('/')}/batch_{self.state_version}"
+
+            self.entity_types.write.parquet(f"{version_dir}/entity_types")
+            self.data_triples.write.parquet(f"{version_dir}/data_triples")
+            self.reverse_refs.write.parquet(f"{version_dir}/reverse_refs")
+
+            self.entity_types = self.session.read.parquet(f"{version_dir}/entity_types")
+            self.data_triples = self.session.read.parquet(f"{version_dir}/data_triples")
+            self.reverse_refs = self.session.read.parquet(f"{version_dir}/reverse_refs")
+
+            self.state_version += 1
+        
         aft_slice = TouchedSlice(
                                 types_df= types_aft,
                                 data_df= triples_aft,
