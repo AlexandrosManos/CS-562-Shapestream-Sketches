@@ -20,7 +20,7 @@ if str(KIT_DIR) not in sys.path:
 
 from engine.reference_engine import ReferenceEngine  # noqa: E402
 from engine.streaming_runner import (  # noqa: E402
-    StreamingRunner, config_name, dataset_name, epoch_dirs, make_engine,
+    StreamingRunner, config_name, dataset_name, epoch_dirs, fresh_state_dir, main, make_engine,
 )
 from shapestream.common import read_stats  # noqa: E402
 from shapestream.evaluate import evaluate  # noqa: E402
@@ -196,6 +196,27 @@ class StreamingRunnerTests(unittest.TestCase):
         if not (KIT_DIR / "engine" / "exact_engine.py").exists():
             with self.assertRaises(SystemExit):
                 make_engine("exact", self.spark, state_dir="x")
+
+    def test_fresh_state_dir_empties_old_state(self):
+        out = self._dir("out")
+        old = out / "_state" / "run_old" / "batch_0"
+        old.mkdir(parents=True)
+        (old / "part-0.parquet").write_text("old state")
+        state_dir = fresh_state_dir(str(out))
+        self.assertEqual(Path(state_dir), out / "_state")
+        self.assertTrue(Path(state_dir).is_dir())
+        self.assertEqual(list(Path(state_dir).iterdir()), [])
+
+    def test_command_line_run_starts_with_empty_state(self):
+        """main() removes the state of an earlier run before it builds the engine."""
+        stream = write_mock_stream(self._dir("stream"))
+        out = self._dir("out")
+        leftover = out / "_state" / "run_old"
+        leftover.mkdir(parents=True)
+        main(["--stream", str(stream), "--engine", "reference", "--dataset", "mock", "--out", str(out)])
+        self.assertFalse(leftover.exists())
+        for k in range(3):
+            self.assert_same_stats(CONTRACT_DIR / f"3_expected_stats_epoch{k}.json", out / f"epoch{k}.json")
 
 
 if __name__ == "__main__":

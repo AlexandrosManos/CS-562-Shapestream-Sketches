@@ -18,8 +18,10 @@ the rows that evaluate.py appends to results_A.csv can be told apart.
 
 Engine contract: an engine class is built as
 `EngineClass(spark, **params)`, where params always holds `state_dir` and, for
-the sketch engine, `hll_p`, `cm_width`, `cm_depth` and `deletions`. For each
-epoch k the runner calls:
+the sketch engine, `hll_p`, `cm_width`, `cm_depth` and `deletions`.
+state_dir is <out>/_state, and the runner empties it before every run, so
+state from an earlier run never stays on disk. Removing old state while the
+run goes on is the engine's job. For each epoch k the runner calls:
 
     process_batch(batch_df, batch_id)   once per non-empty micro-batch of epoch k
     on_epoch_end(k)                     if the engine defines it
@@ -119,6 +121,14 @@ def dataset_name(stream_dir: str) -> str:
     if len(parts) >= 3 and parts[-2] == "streams":
         return parts[-3]
     return parts[-1]
+
+
+def fresh_state_dir(out_dir: str) -> str:
+    """Empty <out>/_state before a run and return its path for the engine."""
+    state_dir = os.path.join(out_dir, "_state")
+    shutil.rmtree(state_dir, ignore_errors=True)
+    os.makedirs(state_dir)
+    return state_dir
 
 
 def kafka_partitions(bootstrap: str, topic: str) -> set[int]:
@@ -378,7 +388,7 @@ def main(argv: Optional[list[str]] = None) -> None:
     config = config_name(a.engine, a.hll_p, a.cm_width, a.deletions)
     out_dir = a.out or os.path.join("runs", TEAM, dataset, config)
 
-    params: dict[str, Any] = {"state_dir": os.path.join(out_dir, "_state")}
+    params: dict[str, Any] = {"state_dir": fresh_state_dir(out_dir)}
     if a.engine == "sketch":
         params.update(hll_p=a.hll_p, cm_width=a.cm_width, cm_depth=a.cm_depth, deletions=a.deletions)
 
