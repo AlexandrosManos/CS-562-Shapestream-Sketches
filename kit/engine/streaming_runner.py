@@ -31,7 +31,21 @@ and only events of epoch k. It is hash-partitioned by subject and sorted by
 (s, seq) inside each partition, so the events of a subject are in seq order.
 batch_id grows across the whole run (it does not restart at every epoch).
 
-The Kafka source (replay_to_kafka.py) is not implemented yet.
+Kafka source (--source kafka) reads the topic written by
+shapestream.replay_to_kafka. One micro-batch can hold the end of epoch k, the
+{"op": "checkpoint", "epoch": k} markers and the start of epoch k+1, and the
+partitions do not advance together. So the runner feeds only the rows of the
+open epoch k, stages rows of later epochs in <out>/_pending/, and closes epoch
+k once its marker has arrived on every partition of the topic. Then it feeds
+the staged rows of k+1 before any newer ones. The topic keeps old replays, so
+use a fresh topic for every run:
+
+    python -m shapestream.replay_to_kafka --stream data/toy/streams/full --topic kg-toy-run1 --rate 0
+    python -m engine.streaming_runner --source kafka --topic kg-toy-run1 --stream data/toy/streams/full --engine reference
+
+With Kafka, --stream only gives the number of epochs and the dataset name, and
+the latency of epoch k runs from the first micro-batch that carries epoch k (or
+from the close of epoch k-1, if that is later) until epoch<k>.json is written.
 """
 from __future__ import annotations
 
@@ -43,6 +57,7 @@ import os
 import shutil
 import sys
 import time
+from collections import defaultdict
 from typing import Any, Optional
 
 KIT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -106,6 +121,20 @@ def dataset_name(stream_dir: str) -> str:
     return parts[-1]
 
 
+def kafka_partitions(bootstrap: str, topic: str) -> set[int]:
+    """Partition ids of a topic. The replayer sends a marker to each of them."""
+    from kafka import KafkaConsumer
+
+    consumer = KafkaConsumer(bootstrap_servers=bootstrap)
+    try:
+        parts = consumer.partitions_for_topic(topic)
+    finally:
+        consumer.close()
+    if not parts:
+        raise RuntimeError(f"topic {topic!r} not found at {bootstrap}")
+    return set(parts)
+
+
 class StreamingRunner:
     """Feeds one engine epoch by epoch and writes the statistics and run info."""
 
@@ -124,6 +153,8 @@ class StreamingRunner:
         # file source thinks the files were already processed and reads nothing.
         self.chk_root = os.path.join(out_dir, "_chk")
         shutil.rmtree(self.chk_root, ignore_errors=True)
+        # Kafka rows of epochs that are not open yet wait here as Parquet.
+        self.pending_root = os.path.join(out_dir, "_pending")
 
     # Shared by every source
     def _prepare(self, events: DataFrame) -> DataFrame:
@@ -196,10 +227,120 @@ class StreamingRunner:
             self.finish_epoch(epoch, n_events, t0)
         return self.run_info
 
+    # Kafka source: one query for the whole run, epochs split by the markers
+    def run_kafka(self, bootstrap: str, topic: str, num_epochs: int, first_epoch: int = 0,
+                  partitions: Optional[set[int]] = None, starting_offsets: str = "earliest",
+                  max_offsets_per_trigger: Optional[int] = None,
+                  timeout_s: Optional[float] = None) -> dict:
+        self.reset_kafka(num_epochs, first_epoch, partitions, bootstrap, topic)
+        reader = (self.spark.readStream.format("kafka")
+                  .option("kafka.bootstrap.servers", bootstrap)
+                  .option("subscribe", topic)
+                  .option("startingOffsets", starting_offsets))
+        if max_offsets_per_trigger:
+            reader = reader.option("maxOffsetsPerTrigger", max_offsets_per_trigger)
+        events = (reader.load()
+                  .select("partition",
+                          F.from_json(F.col("value").cast("string"), EVENT_SCHEMA).alias("e"))
+                  .select("partition", "e.*"))
+        query = (events.writeStream.foreachBatch(self.on_kafka_batch)
+                 .option("checkpointLocation", os.path.join(self.chk_root, "kafka"))
+                 .start())
+        deadline = time.monotonic() + timeout_s if timeout_s else None
+        try:
+            while not self.kafka_done:
+                if query.awaitTermination(1):
+                    break
+                if deadline is not None and time.monotonic() > deadline:
+                    raise TimeoutError(
+                        f"stopped after {timeout_s}s: epoch {self.current_epoch} is still open, "
+                        f"markers seen on partitions {sorted(self.markers[self.current_epoch])}")
+        finally:
+            query.stop()
+        if not self.kafka_done:
+            raise RuntimeError(f"the Kafka query ended with epoch {self.current_epoch} still open")
+        shutil.rmtree(self.pending_root, ignore_errors=True)
+        return self.run_info
+
+    def reset_kafka(self, num_epochs: int, first_epoch: int = 0,
+                    partitions: Optional[set[int]] = None,
+                    bootstrap: Optional[str] = None, topic: Optional[str] = None) -> None:
+        """Start a Kafka run: `first_epoch` is open and nothing is staged."""
+        self.current_epoch = first_epoch
+        self.last_epoch = first_epoch + num_epochs - 1
+        self.partitions = set(partitions) if partitions else None
+        self.kafka_source = (bootstrap, topic)
+        self.markers: dict[int, set[int]] = defaultdict(set)
+        self.epoch_events: dict[int, int] = defaultdict(int)
+        self.first_seen: dict[int, float] = {}
+        self.closed_at: dict[int, float] = {}
+        self.staged: set[int] = set()
+        self.all_closed = False
+        self.kafka_done = False
+        shutil.rmtree(self.pending_root, ignore_errors=True)
+
+    def on_kafka_batch(self, batch_df: DataFrame, _query_batch_id: int) -> None:
+        """foreachBatch of the Kafka query: split one micro-batch by epoch."""
+        if self.all_closed:
+            return
+        started = time.perf_counter()
+        batch = batch_df.persist()
+        try:
+            summary = batch.groupBy("epoch", "op", "partition").count().collect()
+            event_epochs = set()
+            for r in summary:
+                if r["epoch"] is None:
+                    continue
+                self.first_seen.setdefault(r["epoch"], started)
+                if r["op"] == "checkpoint":
+                    self.markers[r["epoch"]].add(r["partition"])
+                else:
+                    event_epochs.add(r["epoch"])
+            late = sorted(e for e in event_epochs if e < self.current_epoch)
+            if late:
+                raise RuntimeError(f"events of closed epoch(s) {late} arrived; "
+                                   "replay into a fresh topic")
+
+            events = batch.filter(F.col("op") != "checkpoint").select(*EVENT_SCHEMA.fieldNames())
+            for epoch in sorted(event_epochs):
+                rows = events.filter(F.col("epoch") == epoch)
+                if epoch == self.current_epoch:
+                    self.epoch_events[epoch] += self.feed(rows)
+                else:
+                    rows.write.mode("append").parquet(self._pending_dir(epoch))
+                    self.staged.add(epoch)
+
+            if self.partitions is None and summary:
+                self.partitions = kafka_partitions(*self.kafka_source)
+            self._close_ready_epochs()
+        finally:
+            batch.unpersist()
+        self.kafka_done = self.all_closed
+
+    def _close_ready_epochs(self) -> None:
+        """Close the open epoch while its marker has arrived on every partition."""
+        while self.partitions and self.markers[self.current_epoch] >= self.partitions:
+            epoch = self.current_epoch
+            t0 = max(self.first_seen[epoch], self.closed_at.get(epoch - 1, float("-inf")))
+            self.finish_epoch(epoch, self.epoch_events[epoch], t0)
+            self.closed_at[epoch] = time.perf_counter()
+            shutil.rmtree(self._pending_dir(epoch), ignore_errors=True)
+            if epoch == self.last_epoch:
+                self.all_closed = True
+                return
+            self.current_epoch = epoch + 1
+            if self.current_epoch in self.staged:
+                staged = self.spark.read.parquet(self._pending_dir(self.current_epoch))
+                self.epoch_events[self.current_epoch] += self.feed(staged)
+
+    def _pending_dir(self, epoch: int) -> str:
+        return os.path.join(self.pending_root, f"epoch{epoch}")
+
 
 def parse_args(argv: Optional[list[str]] = None) -> argparse.Namespace:
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
-    ap.add_argument("--stream", required=True, help="e.g. data/toy/streams/full")
+    ap.add_argument("--source", choices=["file", "kafka"], default="file")
+    ap.add_argument("--stream", help="e.g. data/toy/streams/full (required for the file source)")
     ap.add_argument("--dataset", help="dataset name in meta (default: taken from --stream)")
     ap.add_argument("--engine", choices=sorted(ENGINES), default="exact")
     ap.add_argument("--hll-p", type=int, default=12, help="sketch engine: HLL precision")
@@ -212,12 +353,28 @@ def parse_args(argv: Optional[list[str]] = None) -> argparse.Namespace:
     ap.add_argument("--no-seq-order", action="store_true",
                     help="skip the per-subject seq sort of each micro-batch")
     ap.add_argument("--driver-memory", default=None)
+    kafka = ap.add_argument_group("Kafka source")
+    kafka.add_argument("--bootstrap", default=os.environ.get("KAFKA_BOOTSTRAP", "kafka:9092"))
+    kafka.add_argument("--topic", default="kg-changes")
+    kafka.add_argument("--num-epochs", type=int, help="epochs to read (default: from --stream)")
+    kafka.add_argument("--first-epoch", type=int, default=0)
+    kafka.add_argument("--partitions", type=int, help="partitions of the topic (default: ask Kafka)")
+    kafka.add_argument("--starting-offsets", default="earliest")
+    kafka.add_argument("--max-offsets-per-trigger", type=int, default=None)
+    kafka.add_argument("--timeout", type=float, default=None, help="give up after this many seconds")
     return ap.parse_args(argv)
 
 
 def main(argv: Optional[list[str]] = None) -> None:
     a = parse_args(argv)
-    dataset = a.dataset or dataset_name(a.stream)
+    if a.source == "file" and not a.stream:
+        raise SystemExit("--source file needs --stream")
+    num_epochs = a.num_epochs or (len(epoch_dirs(a.stream)) if a.stream else None)
+    if a.source == "kafka" and not num_epochs:
+        raise SystemExit("--source kafka needs --stream or --num-epochs")
+    dataset = a.dataset or (dataset_name(a.stream) if a.stream else None)
+    if not dataset:
+        raise SystemExit("give --dataset when there is no --stream")
     config = config_name(a.engine, a.hll_p, a.cm_width, a.deletions)
     out_dir = a.out or os.path.join("runs", TEAM, dataset, config)
 
@@ -231,7 +388,12 @@ def main(argv: Optional[list[str]] = None) -> None:
                              {"team": TEAM, "variant": a.variant or config, "dataset": dataset},
                              order_by_seq=not a.no_seq_order,
                              max_files_per_trigger=a.max_files_per_trigger)
-    runner.run_files(a.stream)
+    if a.source == "file":
+        runner.run_files(a.stream)
+    else:
+        runner.run_kafka(a.bootstrap, a.topic, num_epochs, a.first_epoch,
+                         set(range(a.partitions)) if a.partitions else None,
+                         a.starting_offsets, a.max_offsets_per_trigger, a.timeout)
     print(f"wrote {out_dir}/epoch*.json and {out_dir}/run_info.json")
 
 
