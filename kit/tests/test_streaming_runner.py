@@ -99,7 +99,6 @@ class StreamingRunnerTests(unittest.TestCase):
         self.assertEqual(ep, pp, "properties differ")
         self.assertEqual(ek, pk, "constraints differ")
 
-    # ------------------------------------------------------------------ #
     def test_mock_contract_gives_expected_stats(self):
         """Mock events -> 3_expected_stats_epoch{0,1,2}.json, plus run_info per epoch."""
         stream = write_mock_stream(self._dir("stream"))
@@ -187,7 +186,6 @@ class StreamingRunnerTests(unittest.TestCase):
             self.assertEqual(extra["cardinality_accuracy"], 1.0)
             self.assertEqual(extra["class_count_mape"], 0.0)
 
-    # ------------------------------------------------------------------ #
     def test_helpers(self):
         self.assertEqual(config_name("exact"), "exact")
         self.assertEqual(config_name("sketch", 12, 4096), "sketch_p12_w4096")
