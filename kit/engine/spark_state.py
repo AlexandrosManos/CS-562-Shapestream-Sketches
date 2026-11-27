@@ -7,16 +7,24 @@ from pyspark.sql import functions as F
 from engine.contracts import TouchedSlice
 from pathlib import Path
 import shutil
+import tempfile
 
 class SparkState:
-    def __init__(self, spark: SparkSession, state_dir: str) -> None:        
+    def __init__(self, spark: SparkSession, state_dir: str | None = None) -> None:        
         if not isinstance(spark, SparkSession):
             raise TypeError("Expected valid instance of SparkSession")
         
         self.session = spark
+        self._temp_dir = None
+
+        if state_dir is None:
+            self._temp_dir = tempfile.TemporaryDirectory(prefix="shapestream_")
+            state_dir = self._temp_dir.name
+
         self.state_dir = state_dir
+
         self.state_version = 0
-        self.num_buckets = 64
+        self.num_buckets = 16
 
         self.bucket_paths = {
             "entity_types": {},
@@ -84,89 +92,96 @@ class SparkState:
         # i find same triples to keep the latest change 
         latest_win = Window.partitionBy("s", "p", "o", "okind", "dt", "lang").orderBy(F.col("seq").desc())
         latest_events = batch_df.withColumn("rn", F.row_number().over(latest_win)).filter(F.col("rn") == 1).drop("rn")
+        latest_events = latest_events.persist()
+
+        try:
         
-        # first splitting the input for changes in temp buffers 
-        type_events = latest_events.filter((F.col("p") == RDF_TYPE) & (F.col("okind") == "iri"))
-        triple_events = latest_events.filter(F.col("p") != RDF_TYPE)
+            # first splitting the input for changes in temp buffers 
+            type_events = latest_events.filter((F.col("p") == RDF_TYPE) & (F.col("okind") == "iri"))
+            triple_events = latest_events.filter(F.col("p") != RDF_TYPE)
 
-        # i have both direct and indirect changes on the graph after getting the info from the batch 
-        direct_sub = latest_events.select("s").distinct()
-        affected_buckets = self._get_bucket_ids(type_events, "s")
-        reverse_subset = self._read_buckets("reverse_refs", affected_buckets, self.reverse_refs_schema)
-        indir_sub = reverse_subset.join(type_events, reverse_subset["o"] == type_events["s"], how="inner").select(reverse_subset["s"]).distinct()
-        touched = direct_sub.union(indir_sub).distinct()
+            # i have both direct and indirect changes on the graph after getting the info from the batch 
+            direct_sub = latest_events.select("s").distinct()
+            affected_buckets = self._get_bucket_ids(type_events, "s")
+            reverse_subset = self._read_buckets("reverse_refs", affected_buckets, self.reverse_refs_schema)
+            indir_sub = reverse_subset.join(type_events, reverse_subset["o"] == type_events["s"], how="inner").select(reverse_subset["s"]).distinct()
+            touched = direct_sub.union(indir_sub).distinct()
+            touched = touched.localCheckpoint(eager=True) 
 
-        touched_buckets = self._get_bucket_ids(touched, "s")
-        data_subset = self._read_buckets("data_triples", touched_buckets, self.data_triples_schema)
-        types_subset = self._read_buckets("entity_types", touched_buckets, self.entity_types_schema)
-        triples_bef = touched.join(data_subset, on="s", how="inner")
-        types_bef = touched.join(types_subset, on="s", how="inner")
+            touched_buckets = self._get_bucket_ids(touched, "s")
+            data_subset = self._read_buckets("data_triples", touched_buckets, self.data_triples_schema)
+            types_subset = self._read_buckets("entity_types", touched_buckets, self.entity_types_schema)
+            triples_bef = touched.join(data_subset, on="s", how="inner")
+            types_bef = touched.join(types_subset, on="s", how="inner")
 
-        iri_triples_bef = triples_bef.filter(F.col("okind") == "iri")
-        obj_buckets_bef = self._get_bucket_ids(iri_triples_bef, "o")
-        obj_types_subset = self._read_buckets("entity_types", obj_buckets_bef, self.entity_types_schema)
-        obj_types_bef = iri_triples_bef.join(obj_types_subset, iri_triples_bef["o"] == obj_types_subset["s"], how="inner").select(iri_triples_bef["o"], obj_types_subset["cls"]).distinct()
-        
-        bef_slice = TouchedSlice(types_df=types_bef, data_df=triples_bef, obj_types_df=obj_types_bef)
+            iri_triples_bef = triples_bef.filter(F.col("okind") == "iri")
+            obj_buckets_bef = self._get_bucket_ids(iri_triples_bef, "o")
+            obj_types_subset = self._read_buckets("entity_types", obj_buckets_bef, self.entity_types_schema)
+            obj_types_bef = iri_triples_bef.join(obj_types_subset, iri_triples_bef["o"] == obj_types_subset["s"], how="inner").select(iri_triples_bef["o"], obj_types_subset["cls"]).distinct()
+            
+            bef_slice = TouchedSlice(types_df=types_bef, data_df=triples_bef, obj_types_df=obj_types_bef)
 
-        # now i add/ del on kg first on types
-        type_add = type_events.filter(type_events["op"] == "+").select(F.col("s"), F.col("o").alias("cls"))
-        type_del = type_events.filter(type_events["op"] == "-").select(F.col("s"), F.col("o").alias("cls"))
+            # now i add/ del on kg first on types
+            type_add = type_events.filter(type_events["op"] == "+").select(F.col("s"), F.col("o").alias("cls"))
+            type_del = type_events.filter(type_events["op"] == "-").select(F.col("s"), F.col("o").alias("cls"))
 
-        self._update_buckets("entity_types", "s", type_add, type_del, self.entity_types_schema)
+            self._update_buckets("entity_types", "s", type_add, type_del, self.entity_types_schema)
 
-        # here i do the same in data_triples
-        triple_add = triple_events.filter(triple_events["op"] == "+").select(F.col("s"), F.col("p"), F.col("o"), F.col("okind"), F.col("dt"), F.col("lang"))
-        triple_del = triple_events.filter(triple_events["op"] == "-").select(F.col("s"), F.col("p"), F.col("o"), F.col("okind"), F.col("dt"), F.col("lang"))
+            # here i do the same in data_triples
+            triple_add = triple_events.filter(triple_events["op"] == "+").select(F.col("s"), F.col("p"), F.col("o"), F.col("okind"), F.col("dt"), F.col("lang"))
+            triple_del = triple_events.filter(triple_events["op"] == "-").select(F.col("s"), F.col("p"), F.col("o"), F.col("okind"), F.col("dt"), F.col("lang"))
 
-        reverse_add = triple_add.filter(F.col("okind") == "iri").select("o", "s", "p", "dt", "lang")
-        reverse_del = triple_del.filter(F.col("okind") == "iri").select("o", "s", "p", "dt", "lang")
-        
-        self._update_buckets(
-            "reverse_refs",
-            "o",
-            reverse_add,
-            reverse_del,
-            self.reverse_refs_schema
-        )
+            reverse_add = triple_add.filter(F.col("okind") == "iri").select("o", "s", "p", "dt", "lang")
+            reverse_del = triple_del.filter(F.col("okind") == "iri").select("o", "s", "p", "dt", "lang")
+            
+            self._update_buckets(
+                "reverse_refs",
+                "o",
+                reverse_add,
+                reverse_del,
+                self.reverse_refs_schema
+            )
 
-        self._update_buckets(
-            "data_triples",
-            "s",
-            triple_add,
-            triple_del,
-            self.data_triples_schema
-        )
-        
-        data_subset_aft = self._read_buckets("data_triples", touched_buckets, self.data_triples_schema)
+            self._update_buckets(
+                "data_triples",
+                "s",
+                triple_add,
+                triple_del,
+                self.data_triples_schema
+            )
+            
+            data_subset_aft = self._read_buckets("data_triples", touched_buckets, self.data_triples_schema)
 
-        types_subset_aft = self._read_buckets("entity_types", touched_buckets, self.entity_types_schema)
+            types_subset_aft = self._read_buckets("entity_types", touched_buckets, self.entity_types_schema)
 
-        triples_aft = touched.join(data_subset_aft, on="s", how="inner")
-        types_aft = touched.join(types_subset_aft, on="s", how="inner")
+            triples_aft = touched.join(data_subset_aft, on="s", how="inner")
+            types_aft = touched.join(types_subset_aft, on="s", how="inner")
 
-        iri_triples_aft = triples_aft.filter(F.col("okind") == "iri")
+            iri_triples_aft = triples_aft.filter(F.col("okind") == "iri")
 
-        obj_buckets_aft = self._get_bucket_ids(iri_triples_aft, "o")
+            obj_buckets_aft = self._get_bucket_ids(iri_triples_aft, "o")
 
-        obj_types_subset_aft = self._read_buckets("entity_types", obj_buckets_aft, self.entity_types_schema)
+            obj_types_subset_aft = self._read_buckets("entity_types", obj_buckets_aft, self.entity_types_schema)
 
-        obj_types_aft = iri_triples_aft.join(obj_types_subset_aft, iri_triples_aft["o"] == obj_types_subset_aft["s"], how="inner").select(iri_triples_aft["o"], obj_types_subset_aft["cls"]).distinct()
+            obj_types_aft = iri_triples_aft.join(obj_types_subset_aft, iri_triples_aft["o"] == obj_types_subset_aft["s"], how="inner").select(iri_triples_aft["o"], obj_types_subset_aft["cls"]).distinct()
 
-        self.state_version += 1
-        
-        aft_slice = TouchedSlice(
-                                types_df= types_aft,
-                                data_df= triples_aft,
-                                obj_types_df= obj_types_aft
-        )
+            self.state_version += 1
+            
+            aft_slice = TouchedSlice(
+                                    types_df= types_aft,
+                                    data_df= triples_aft,
+                                    obj_types_df= obj_types_aft
+            )
 
-        result = (bef_slice, aft_slice)
-        assert isinstance(result, tuple)
-        assert len(result) == 2
-        assert all(isinstance(x, TouchedSlice) for x in result)
-        
-        return result
+            result = (bef_slice, aft_slice)
+            assert isinstance(result, tuple)
+            assert len(result) == 2
+            assert all(isinstance(x, TouchedSlice) for x in result)
+            
+            return result
+
+        finally:
+            latest_events.unpersist()
 
 
     
@@ -237,6 +252,11 @@ class SparkState:
     # public
     ###################
     def cleanup(self) -> None:
+        """Remove obsolete bucket versions.
+
+        Must be called after aggregator.update(before_slice, after_slice)
+        has completed successfully and the old slices are no longer needed.
+        """
         active_paths = {
             Path(path)
             for table in self.bucket_paths.values()
