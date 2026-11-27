@@ -1,9 +1,6 @@
 """Checkpoint 1 exact engine used by the streaming runner."""
 from __future__ import annotations
 
-from tempfile import TemporaryDirectory
-from uuid import uuid4
-
 from pyspark.sql import DataFrame, SparkSession
 
 from .contracts import StatsTuple
@@ -13,13 +10,7 @@ from .spark_state import SparkState
 
 class ExactEngine:
     def __init__(self, spark: SparkSession, state_dir: str | None = None) -> None:
-        # SparkState writes immutable batch versions. Give each run its own path.
-        self._temp_dir: TemporaryDirectory | None = None
-        if state_dir is None:
-            self._temp_dir = TemporaryDirectory()
-            state_dir = self._temp_dir.name
-        self._run_dir = f"{state_dir.rstrip('/')}/run_{uuid4().hex}"
-        self.state = SparkState(spark, state_dir=self._run_dir)
+        self.state = SparkState(spark, state_dir=state_dir)
         self.aggregator = ExactAggregator()
         self._last_batch_id: int | None = None
         self._failed = False
@@ -41,6 +32,7 @@ class ExactEngine:
             before, after = self.state.apply_batch(batch_df)
             # Subtract the subjects' old contributions and add their new ones.
             self.aggregator.update(before, after)
+            self.state.cleanup()
         except Exception:
             # A failure can leave the graph ahead of its counts. Block further reads
             # and updates on this instance because replay assumes they are in sync.
@@ -56,16 +48,6 @@ class ExactEngine:
         return self.aggregator.current_stats()
 
     def state_mb(self) -> float:
-        """Size of the current Parquet version and the driver's summary dictionaries."""
+        """Size of the active Parquet buckets and the driver's summary dictionaries."""
         self._check_state()
-        table_bytes = 0
-        # SparkState increments state_version after writing a batch. Zero means
-        # nothing has been written yet, and version N makes batch_(N-1) active.
-        if self.state.state_version:
-            context = self.state.session.sparkContext
-            path = context._jvm.org.apache.hadoop.fs.Path(
-                f"{self._run_dir}/batch_{self.state.state_version - 1}"
-            )
-            filesystem = path.getFileSystem(context._jsc.hadoopConfiguration())
-            table_bytes = filesystem.getContentSummary(path).getLength()
-        return (table_bytes + self.aggregator.state_bytes()) / (1024 ** 2)
+        return (self.state.state_bytes() + self.aggregator.state_bytes()) / (1024 ** 2)
