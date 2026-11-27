@@ -16,7 +16,7 @@ Output goes to runs/A1/<dataset>/<config>/ unless --out is given, with
 grid point has its own folder. The same string is written as meta.variant, so
 the rows that evaluate.py appends to results_A.csv can be told apart.
 
-Engine contract (agreed with Member 4): an engine class is built as
+Engine contract: an engine class is built as
 `EngineClass(spark, **params)`, where params always holds `state_dir` and, for
 the sketch engine, `hll_p`, `cm_width`, `cm_depth` and `deletions`. For each
 epoch k the runner calls:
@@ -125,9 +125,7 @@ class StreamingRunner:
         self.chk_root = os.path.join(out_dir, "_chk")
         shutil.rmtree(self.chk_root, ignore_errors=True)
 
-    # ------------------------------------------------------------------ #
     # Shared by every source
-    # ------------------------------------------------------------------ #
     def _prepare(self, events: DataFrame) -> DataFrame:
         """Keep the change events and put each subject's events in seq order."""
         events = events.filter(F.col("op").isin("+", "-"))
@@ -176,9 +174,7 @@ class StreamingRunner:
             json.dump(self.run_info, f, indent=1)
         os.replace(tmp, path)
 
-    # ------------------------------------------------------------------ #
     # File source: one availableNow query per epoch folder
-    # ------------------------------------------------------------------ #
     def run_files(self, stream_dir: str) -> dict:
         for epoch, path in epoch_dirs(stream_dir):
             n_events = 0
