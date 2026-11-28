@@ -10,10 +10,12 @@ import shutil
 import tempfile
 
 class SparkState:
-    def __init__(self, spark: SparkSession, state_dir: str | None = None) -> None:        
+    def __init__(self, spark: SparkSession, state_dir: str | None = None, num_buckets: int = 16) -> None:
         if not isinstance(spark, SparkSession):
             raise TypeError("Expected valid instance of SparkSession")
-        
+        if num_buckets < 1:
+            raise ValueError("num_buckets must be >= 1")
+
         self.session = spark
         self._temp_dir = None
 
@@ -24,7 +26,7 @@ class SparkState:
         self.state_dir = state_dir
 
         self.state_version = 0
-        self.num_buckets = 16
+        self.num_buckets = num_buckets
 
         self.bucket_paths = {
             "entity_types": {},
@@ -100,10 +102,11 @@ class SparkState:
             type_events = latest_events.filter((F.col("p") == RDF_TYPE) & (F.col("okind") == "iri"))
             triple_events = latest_events.filter(F.col("p") != RDF_TYPE)
 
-            # i have both direct and indirect changes on the graph after getting the info from the batch 
+            type_s_buckets, triple_s_buckets, triple_o_buckets = self._event_buckets(latest_events)
+
+            # i have both direct and indirect changes on the graph after getting the info from the batch
             direct_sub = latest_events.select("s").distinct()
-            affected_buckets = self._get_bucket_ids(type_events, "s")
-            reverse_subset = self._read_buckets("reverse_refs", affected_buckets, self.reverse_refs_schema)
+            reverse_subset = self._read_buckets("reverse_refs", type_s_buckets, self.reverse_refs_schema)
             indir_sub = reverse_subset.join(type_events, reverse_subset["o"] == type_events["s"], how="inner").select(reverse_subset["s"]).distinct()
             touched = direct_sub.union(indir_sub).distinct()
             touched = touched.localCheckpoint(eager=True) 
@@ -125,7 +128,7 @@ class SparkState:
             type_add = type_events.filter(type_events["op"] == "+").select(F.col("s"), F.col("o").alias("cls"))
             type_del = type_events.filter(type_events["op"] == "-").select(F.col("s"), F.col("o").alias("cls"))
 
-            self._update_buckets("entity_types", "s", type_add, type_del, self.entity_types_schema)
+            self._update_buckets("entity_types", "s", type_s_buckets, type_add, type_del, self.entity_types_schema)
 
             # here i do the same in data_triples
             triple_add = triple_events.filter(triple_events["op"] == "+").select(F.col("s"), F.col("p"), F.col("o"), F.col("okind"), F.col("dt"), F.col("lang"))
@@ -137,6 +140,7 @@ class SparkState:
             self._update_buckets(
                 "reverse_refs",
                 "o",
+                triple_o_buckets,
                 reverse_add,
                 reverse_del,
                 self.reverse_refs_schema
@@ -145,6 +149,7 @@ class SparkState:
             self._update_buckets(
                 "data_triples",
                 "s",
+                triple_s_buckets,
                 triple_add,
                 triple_del,
                 self.data_triples_schema
@@ -159,7 +164,9 @@ class SparkState:
 
             iri_triples_aft = triples_aft.filter(F.col("okind") == "iri")
 
-            obj_buckets_aft = self._get_bucket_ids(iri_triples_aft, "o")
+            # objects after the batch = objects before + objects of inserted IRI triples, so this
+            # superset is correct without another collect (the join on o filters the extras)
+            obj_buckets_aft = sorted(set(obj_buckets_bef) | set(triple_o_buckets))
 
             obj_types_subset_aft = self._read_buckets("entity_types", obj_buckets_aft, self.entity_types_schema)
 
@@ -188,14 +195,27 @@ class SparkState:
     ###################
     # psilo prive
     ##################
+    def _bucket_expr(self, col):
+        return F.pmod(F.xxhash64(col), F.lit(self.num_buckets)).cast("int")
+
+
     def _with_bucket(self, df: DataFrame, key: str) -> DataFrame:
-        return df.withColumn(
-            "bucket",
-            F.pmod(
-                F.xxhash64(F.col(key)),
-                F.lit(self.num_buckets)
-            ).cast("int")
-        )
+        return df.withColumn("bucket", self._bucket_expr(F.col(key)))
+
+
+    def _event_buckets(self, events: DataFrame) -> tuple[list[int], list[int], list[int]]:
+        is_type = (F.col("p") == RDF_TYPE) & (F.col("okind") == "iri")
+        is_triple = F.col("p") != RDF_TYPE
+        rows = events.select(
+            F.when(is_type, self._bucket_expr(F.col("s"))).alias("type_s"),
+            F.when(is_triple, self._bucket_expr(F.col("s"))).alias("triple_s"),
+            F.when(is_triple & (F.col("okind") == "iri"), self._bucket_expr(F.col("o"))).alias("triple_o"),
+        ).distinct().collect()
+
+        def pick(name: str) -> list[int]:
+            return sorted({r[name] for r in rows if r[name] is not None})
+
+        return pick("type_s"), pick("triple_s"), pick("triple_o")
 
     
     def _read_buckets(self, table: str, bucket_ids, schema: StructType) -> DataFrame:
@@ -221,11 +241,8 @@ class SparkState:
         ]
 
 
-    def _update_buckets(self, table: str, key: str, additions: DataFrame,deletions: DataFrame, schema: StructType) -> None:
-
+    def _update_buckets(self, table: str, key: str, affected: list[int], additions: DataFrame, deletions: DataFrame, schema: StructType) -> None:
         columns = schema.fieldNames()
-
-        affected = self._get_bucket_ids(additions.select(key).unionByName(deletions.select(key)),key)
 
         if not affected:
             return
